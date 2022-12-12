@@ -24,7 +24,7 @@
 						<input type="hidden" name="rename" size="20">
 				</div>
 				<div class="registerform-check">
-					<button type="button" class="btn-idCheck" onclick="idCheck()" id="idcheck">중복 확인</button>
+					<button type="button" class="btn-idCheck" onclick="idCheck()" id="idcheck">이름으로<br> 아이디찾기</button>
 				</div>
 			</div>
 		</form>
