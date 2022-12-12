@@ -15,9 +15,9 @@
         </div>
       </form>
       <ul class="find">
-        <li class="find-control"><a href="">아이디 찾기</a></li>
+        <li class="find-control"><a href="/auth/findId">아이디 찾기</a></li>
         <p style="color: rgb(189, 189, 189,0.5);">｜</p>
-        <li class="find-control"><a href="">비밀번호 찾기</a></li>
+        <li class="find-control"><a href="/auth/modifyPwd">비밀번호 찾기</a></li>
       </ul>
 
       <!-- 외부로그인 및 회원가입 -->

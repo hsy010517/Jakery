@@ -15,6 +15,14 @@ public class UsersController {
 	public String loginForm() {
 		return "user/loginForm";
 	}
+	@GetMapping("/auth/findId")
+	public String findId() {
+		return "user/findId";
+	}
+	@GetMapping("/auth/modifyPwd")
+	public String modifyPwd() {
+		return "user/modifyPwd";
+	}
 	
 	//유저 수정 폼 jsp있으면
 	
