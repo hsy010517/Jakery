@@ -1,0 +1,126 @@
+
+#freeboard-container{
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  background-color: #ffc730;
+  position:relative;
+}
+.freeboard-wrapper{
+  width: 80%;
+  background-color: #fff;
+  height: 100%;
+  min-height: 800px;
+  margin: 0 auto;
+}
+
+.freeboard-logo {
+  font-family: 'Roboto', sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 120px;
+  font-weight: 800;
+  letter-spacing: -5px;
+  margin-left: 10px;
+  padding-top: 0;
+  line-height: 0.7;
+}
+
+.freeboard-line {
+background-color: #ffc730;
+width: 35%;
+height: 16px;
+}
+
+.boardlogo-div{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.freeboardform-btndiv{
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items:flex-end;
+margin: auto;
+}
+
+.freeboard-link-btn{
+  background-color: #303030;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:30px;
+  font-weight: 800;
+  color: #fff;
+  padding: 20px 40px ;
+}
+.freeboard-link-btn:hover {
+  background-color: #303030;
+  color: #ffc730;
+  transition: all 0s;
+  font-size:33px;
+  padding: 19px 39px;
+}
+.board-div{
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.board-description{
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  font-weight: 400;
+  text-align: right;
+  color: #999;
+  margin: 0 auto;
+  width: 90%;
+  padding: 40px 0px 5px 0px;
+  line-height: 1.3;
+  border-bottom: 2px #ffc730 solid;
+}
+.board-list-title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:16px;
+  font-weight: 800;
+  text-align: right;
+  color: #303030;
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px 0px 5px 0px;
+}
+.board-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 10fr 2fr 1fr;
+  padding: 12px;
+  margin:  8px;
+  background: none;
+  border-top: rgb(218, 218, 218) solid 1.5px;
+  border-bottom: rgb(218, 218, 218) solid 1.5px;
+}
+
+.board-item{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 400;
+  color: #303030;
+  padding:  0 10px;
+}
+.board-list:hover{
+  background-color: rgba(238, 238, 238, 0.479);
+}
+
+.board-title{
+  font-weight: 600;
+}
+
+.board-num, .board-count{
+  color:#ffc730;
+}
