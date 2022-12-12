@@ -27,5 +27,6 @@
 			</div>
 		</div>
 	</div>
+	<button>test</button>
 
 	<%@ include file="layout/footer.jsp"%>
