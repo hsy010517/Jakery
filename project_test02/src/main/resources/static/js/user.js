@@ -1,12 +1,12 @@
 let index = {
 	init: function() {
-		$("#btn-save").on("click", () => {
+		$("#registerbtn-save").on("click", () => {
 			this.save();
 		});
 		/*$("#btn-login").on("click",()=>{
 			this.login();
 		});*/
-		$("#btn-update").on("click", () => {
+		$("#registerbtn-update").on("click", () => {
 			this.update();
 		});
 	},
@@ -17,7 +17,9 @@ let index = {
 			username: $("#username").val(),
 			password: $("#password").val(),
 			email: $("#email").val(),
-			address: $("#address").val()
+			address: $("#address").val(),
+			postnum: $("#postnum").val(),
+			subaddress: $("#subaddress").val()
 		};
 
 		$.ajax({

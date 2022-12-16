@@ -4,11 +4,14 @@
 <div id="login-contatiner">
     <div class="wrapper login-wrapper">
       <a class="login-logo" href="/"><span style="color: #ffc730;">J</span><span style="color: #fff;">akery</span></a>
-      <form action="/auth/loginProc" method="POST" class="login-form">
+      <form action="/auth/loginProc" method="POST" class="login-form" >
         <div class="login-div">
-          <input type="text" class="form-control2" placeholder="ID" id="username" name="username">
+          <input type="text" class="form-control2" placeholder="ID" id="userid" name="userid">
           <input type="password" class="form-control2" placeholder="PASSWORD" id="password" name="password">
           <div class="btn2">
+         	<c:if test="${error eq 'true'}">
+					<p class="alert alert-danger">${exception}</p>
+			</c:if>
             <button type="submit" id="btn-login">LOGIN&nbsp&nbsp⊙</button>
             <button type="button" id="btn-register"><a>Join up&nbsp&nbsp⊙</a></button>
           </div>

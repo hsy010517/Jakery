@@ -17,6 +17,7 @@ public class FreeBoardService {
 	@Autowired
 	private FreeboardRepository freeboardRepository;
 
+
 	@Transactional
 	public void 글쓰기(FreeBoards freeboard, Users user) { // title, content
 		freeboard.setCount(0);
@@ -63,6 +64,6 @@ public class FreeBoardService {
 		freeboard.setContent(requestBoard.getContent());
 	}
 	
-	 
-
+	
 }
+

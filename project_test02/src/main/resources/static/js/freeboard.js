@@ -12,6 +12,10 @@ let index={
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.update();
 		});
+		$("#btn-reply-save").on("click",()=>{
+			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
+			this.replySave();
+		});
 		
 	},
 	save: function(){

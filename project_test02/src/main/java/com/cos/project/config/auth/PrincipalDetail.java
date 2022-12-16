@@ -11,6 +11,7 @@ import com.cos.project.model.Users;
 import lombok.Getter;
 
 @Getter
+@SuppressWarnings("serial")
 public class PrincipalDetail implements UserDetails {
 	private Users user;
 
@@ -37,6 +38,11 @@ public class PrincipalDetail implements UserDetails {
 		// TODO Auto-generated method stub
 		return user.getUsername();
 	}
+	
+	
+	 public  String getUserid() { 
+	 return user.getUserid(); }
+	 
 
 	@Override
 	public boolean isAccountNonExpired() {

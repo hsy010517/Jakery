@@ -27,8 +27,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @SequenceGenerator(
-		name="USER_SEQ_GENERATOR3"
-		, sequenceName = "USER_SEQ3"
+		name="REVIEW_SEQ_GENERATOR"
+		, sequenceName = "REVI_SEQ"
 		, initialValue = 1
 		, allocationSize = 1
 		)
@@ -39,6 +39,7 @@ public class Replys {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REVIEW_SEQ_GENERATOR")
 	private int num;
 	
+
 	@Column(nullable=false, length=200)
 	private String content;
 	

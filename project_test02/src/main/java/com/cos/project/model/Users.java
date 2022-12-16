@@ -54,6 +54,12 @@ public class Users {
 	@Column(nullable=false, length=100)
 	private String address;
 	
+	@Column(nullable=false, length=100)
+	private String postnum;
+	
+	@Column(length=100)
+	private String subaddress;
+	
 	@ColumnDefault("'user'")
 	@Enumerated(EnumType.STRING)
 	private RoleType roles;

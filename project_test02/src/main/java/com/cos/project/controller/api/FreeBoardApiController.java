@@ -20,18 +20,21 @@ public class FreeBoardApiController {
 		
 		@Autowired
 		private FreeBoardService freeBoardService;	
-		
+		//자유게시판 글작성
 		@PostMapping("/api/freeboard")
-		public ResponseDto<Integer> save(@RequestBody FreeBoards freeboard, @AuthenticationPrincipal PrincipalDetail principal ) {
+		public ResponseDto<Integer> save(@RequestBody FreeBoards freeboard, 
+				@AuthenticationPrincipal PrincipalDetail principal ) {
 			freeBoardService.글쓰기(freeboard,principal.getUser());
 			return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 		}
+		//자유게시판 글삭제
 		@DeleteMapping("/api/freeboard/{num}")
 		public ResponseDto<Integer> deleteById(@PathVariable int num){
 			System.out.println(num);
 			freeBoardService.글삭제하기(num);
 			return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 		}
+		//자유게시판 글수정
 		@PutMapping("/api/freeboard/{num}")
 		public ResponseDto<Integer> update(@PathVariable int num,@RequestBody FreeBoards freeboard){
 			System.out.println("FreeBoardApiController:update id"+num);
@@ -39,5 +42,6 @@ public class FreeBoardApiController {
 			freeBoardService.글수정하기(num,freeboard);
 			return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 		}
+		
 }
 

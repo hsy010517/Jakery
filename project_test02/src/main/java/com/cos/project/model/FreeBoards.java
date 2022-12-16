@@ -3,6 +3,7 @@ package com.cos.project.model;
 import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,6 +19,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -55,7 +58,8 @@ public class FreeBoards {
 	@JoinColumn(name="username")
 	private Users users;
 	
-	@OneToMany(mappedBy="boards", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="boards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"boards"})
 	private List<Replys> reply;
 	
 	@Column

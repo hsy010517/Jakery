@@ -19,6 +19,9 @@
 					<label for="password">비밀번호 확인 <span style="color: #ffc730;">*</span></label>
 					<label for="email">메일 <span style="color: #ffc730;">*</span></label>
 					<label for="address">주소 <span style="color: #ffc730;">*</span></label>
+					 <label for="tel2" class="title">우편번호</label>
+					 <label for="addr" class="title">주소</label>
+					  <label for="addr" class="title">상세 주소</label>
 				</div>
 				<div class="registerform-input">
 					<input type="text" class="registerform-control"
@@ -30,22 +33,45 @@
 						class="registerform-control" placeholder="Enter password again"
 						id="passwordcheck"> <input type="email"
 						class="registerform-control" placeholder="Enter email" id="email">
-					<input type="text" class="registerform-control"
-						placeholder="Enter Your Address" id="address">
+					
+					   
+             
+              <input type="text" name="zipcode" id="postnum" size="7"
+              readonly placeholder="Post Number: Zip code"> 
+              <input type="button" value="우편번호찾기" onclick="kakaopost()">
+              <input type="text" name="address" id="address" placeholder="Address">
+              <input type="text" name="address_detail" id="subaddress" placeholder="Detail Address"/>
 				</div>
 				<div class="registerform-check">
-					<button type="button" class="btn-idCheck">중복 확인</button>
+					<button type="button" class="registerbtn-idCheck">중복 확인</button>
 				</div>
 			</div>
 		</form>
-		<button type="submit" class="btn-register" id="btn-save"
-			onclick="checkValue()">Join up&nbsp&nbsp⊙</button>
+		<button type="submit" class="btn-register" id="registerbtn-save">
+			Join up&nbsp&nbsp⊙</button>
 		<a href="" class="sns-login-link">소셜 네트워크로 쉽게 로그인하기 > </a>
 
 	</div>
 </div>
 
-
+<!-- kakao address api script -->
+ <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script>
+  function kakaopost() {
+      new daum.Postcode({
+          oncomplete: function(data) {
+             document.querySelector("#postnum").value = data.zonecode;
+             document.querySelector("#address").value =  data.address
+          }
+      }).open();
+  }
+  $(document).ready(function() {
+  $("#myDropdown").change(function() {
+    var selectedValue = $(this).val();
+    $("#txtBox").val(selectedValue);
+  });
+});
+  </script>
 
 <script src="/js/user.js"></script>
 <br />

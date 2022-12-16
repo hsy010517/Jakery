@@ -33,7 +33,10 @@
       <div class="board-div">
         <c:forEach var="freeboard" items="${freeboards.content}">
           <ul class="board-list">
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-num">${freeboard.num}</a>
+            <li class="board-item">
+            <a href="/auth/board/${freeboard.num}" class="board-num">
+            ${freeboard.num}
+            </a>
             </li>
             <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-title">${freeboard.title}</a>
             </li>
@@ -61,11 +64,10 @@
             <li class="page-item"><a class="page-link" href="?page=${freeboards.number+1}">Next</a></li>
           </c:otherwise>
         </c:choose>
-
-
       </ul>
     </div>
   </div>
+  
   <br />
 
 <%@ include file="../layout/footer.jsp"%>

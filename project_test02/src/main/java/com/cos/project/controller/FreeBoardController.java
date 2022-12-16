@@ -1,5 +1,7 @@
 package com.cos.project.controller;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -33,7 +35,7 @@ public class FreeBoardController {
 		public String index(Model model,@PageableDefault(size=3,sort="num",direction=Sort.Direction.DESC) Pageable pageable) {
 			System.out.println("a");
 			
-			model.addAttribute("freeboards", freeboardService.글목록(pageable));
+			model.addAttribute("freeboards", freeboardService.글목록(pageable));	
 			return "board/freeBoard"; 
 		}
 		//게시글 작성
@@ -46,7 +48,7 @@ public class FreeBoardController {
 		//글 상세보기
 		@GetMapping("/auth/board/{num}")
 		public String findByNum(@PathVariable int num, Model model) {
-			
+			System.out.println("글상세 호출"+num);
 			model.addAttribute("freeboard",freeboardService.글상세보기(num));
 			return "board/freeDetail";
 		}
@@ -58,5 +60,6 @@ public class FreeBoardController {
 			model.addAttribute("freeboard",freeboardService.수정글상세보기(num));
 			return "board/freeUpdateForm";
 		}
+		
 	
 }
