@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
 
-
   <div id="freeboard-container">
     <div class="wrapper freeboard-wrapper">
       <div class="boardlogo-div">
@@ -18,8 +17,8 @@
             <button class="freeboard-link-btn" onclick="location.href='/auth/loginForm';">글쓰기</button>
           </c:when>
 
-          <c:otherwise>
-            <button class="freeboard-link-btn" onclick="location.href='/board/freeSaveForm'; count();">게시판작성</button>
+         <c:otherwise>
+            <button class="freeboard-link-btn" onclick="location.href='/freeboard/freeSaveForm'; count();">게시판작성</button>
           </c:otherwise> 
         </c:choose>
       </div>
@@ -30,43 +29,46 @@
         게시글 관련 신고는 1:1 문의를 통해 접수해주시기 바랍니다.
       </div>
       <div class="board-list-title">LIST</div>
-      <div class="board-div">
         <c:forEach var="freeboard" items="${freeboards.content}">
-          <ul class="board-list">
-            <li class="board-item">
-            <a href="/auth/board/${freeboard.num}" class="board-num">
-            ${freeboard.num}
-            </a>
+          <div class="board-div">
+            <ul class="board-list">
+            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-num">${freeboard.freenum}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-title">${freeboard.title}</a>
+            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-title">${freeboard.freetitle}<span style="font-weight:300; color:#ffc730;"> (댓글수)</span></a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-id">${freeboard.users.username}</a>
+            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-id">${freeboard.users.userid}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-count">${freeboard.count}</a>
+            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-count">${freeboard.count}</a>
             </li>
           </ul>
+        </div>
         </c:forEach>
-      </div>
       <ul class="pagination justify-content-center">
         <c:choose>
           <c:when test="${freeboards.first}">
-            <li class="page-item disabled"><a class="page-link" href="?page=${freeboards.number-1}">Previous</a></li>
+            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${freeboards.number-1}">&laquo;</a></li>
           </c:when>
           <c:otherwise>
-            <li class="page-item"><a class="page-link" href="?page=${freeboards.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${freeboards.number-1}">&laquo;</a></li>
           </c:otherwise>
         </c:choose>
+        <li class="pagingbtn"><a class="page-link" href="?page=1">1</a></li>
+        <li class="pagingbtn"><a class="page-link" href="?page=2">2</a></li>
+        <li class="pagingbtn"><a class="page-link" href="?page=3">3</a></li>
         <c:choose>
           <c:when test="${freeboards.last}">
-            <li class="page-item disabled"><a class="page-link" href="?page=${freeboards.number+1}">Next</a></li>
+            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${freeboards.number+1}">&raquo;</a></li>
           </c:when>
           <c:otherwise>
-            <li class="page-item"><a class="page-link" href="?page=${freeboards.number+1}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${freeboards.number+1}">&raquo;</a></li>
           </c:otherwise>
         </c:choose>
+
+
       </ul>
     </div>
   </div>
+
   
   <br />
 

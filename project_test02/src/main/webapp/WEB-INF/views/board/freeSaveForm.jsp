@@ -2,26 +2,25 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
 
-<div class="container">
-<form>
-	<div class="form-group">
-	<label for="title">Title</label>
-	<input id="title" type="text" class="form-control" placeholder="Enter title">	
-	</div>
-	<div class="form-group">
-	<label for="content">Content:</label>
-	<textarea id="content" class="form-control summernote" rows="5"></textarea>
-	</div>
-</form>
-<button id="btn-save" class="btn btn-primary">저장</button>
-</div>
-<br/>
-<script>
-	$('.summernote').summernote({
-		tabsize: 2,
-		height: 300
-	});
-</script>
+ <div id="writing-container">
+    <div class="wrapper writing-wrapper">
+      <div class="product-sub-title">
+        <span style="color:#ffc730;">F</span>REE <span style="color:#ffc730;">B</span>OARD
+      </div>
+      <form>
+        <div class="freetitle">
+          <input id="freetitle" type="text" class="form-control" placeholder="제목을 입력하세요.">	
+        </div>
+        <div class="freecontent">
+        <textarea id="freecontent" class="form-control summernote" placeholder="작성할 내용을 입력하세요." rows="20"></textarea>
+        </div>
+      </form>
+      <button id="freeboardbtn-save" class="freeboardbtn-save">저장하기</button>
+      </div>
+      </div>
+
+
+
 <script type="text/javascript" src="/js/freeboard.js"></script>
 </body>
 </html>

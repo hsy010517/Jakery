@@ -32,7 +32,7 @@ public class FreeBoardController {
 		 */
 		//게시글 목록
 		@GetMapping({"/auth/freeBoard"})
-		public String index(Model model,@PageableDefault(size=3,sort="num",direction=Sort.Direction.DESC) Pageable pageable) {
+		public String index(Model model,@PageableDefault(size=3,sort="freenum",direction=Sort.Direction.DESC) Pageable pageable) {
 			System.out.println("a");
 			
 			model.addAttribute("freeboards", freeboardService.글목록(pageable));	
@@ -40,24 +40,24 @@ public class FreeBoardController {
 		}
 		//게시글 작성
 		//USER 권한이 필요
-		@GetMapping({"/board/freeSaveForm"})
+		@GetMapping({"/freeboard/freeSaveForm"})
 		public String freeSaveForm() {
 			return "board/freeSaveForm";
 		}
 		
 		//글 상세보기
-		@GetMapping("/auth/board/{num}")
-		public String findByNum(@PathVariable int num, Model model) {
-			System.out.println("글상세 호출"+num);
-			model.addAttribute("freeboard",freeboardService.글상세보기(num));
+		@GetMapping("/auth/freeboard/{freenum}")
+		public String findByNum(@PathVariable int freenum, Model model) {
+			System.out.println("글상세 호출"+freenum);
+			model.addAttribute("freeboard",freeboardService.자유게시판글상세보기(freenum));
 			return "board/freeDetail";
 		}
 		
 		
 		//글수정하기
-		@GetMapping("/board/{num}/freeUpdateForm")
-		public String updateForm(@PathVariable int num, Model model) {
-			model.addAttribute("freeboard",freeboardService.수정글상세보기(num));
+		@GetMapping("/board/{freenum}/freeUpdateForm")
+		public String updateForm(@PathVariable int freenum, Model model) {
+			model.addAttribute("freeboard",freeboardService.자유게시판수정글상세보기(freenum));
 			return "board/freeUpdateForm";
 		}
 		

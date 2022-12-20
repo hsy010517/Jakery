@@ -33,8 +33,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @SequenceGenerator(
-		name= "USER_SEQ_GENERATOR2"
-		, sequenceName= "USER_SEQ2"
+		name= "FREEBOARD_SEQ_GENERATOR"
+		, sequenceName= "FREE_SEQ2"
 		, initialValue= 1
 		, allocationSize= 1
 		)
@@ -43,13 +43,13 @@ import lombok.NoArgsConstructor;
 public class FreeBoards {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FREEBOARD_SEQ_GENERATOR")
-	private int num;
+	private int freenum;
 	
 	@Column(nullable=false, length=100)
-	private String title;
+	private String freetitle;
 	
 	@Lob 
-	private String content;
+	private String freecontent;
 	
 	@Column
 	private int count;
@@ -58,13 +58,13 @@ public class FreeBoards {
 	@JoinColumn(name="username")
 	private Users users;
 	
-	@OneToMany(mappedBy="boards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"boards"})
-	private List<Replys> reply;
+	@OneToMany(mappedBy="freeboards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"freeboards"})
+	private List<FreeReplys> freereply;
 	
 	@Column
 	private int recommend;
 
 	@CreationTimestamp
-	private Timestamp createDate;
+	private Timestamp freecreateDate;
 }

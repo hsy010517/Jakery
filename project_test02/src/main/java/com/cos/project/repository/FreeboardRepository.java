@@ -8,7 +8,7 @@ import com.cos.project.model.FreeBoards;
 
 public interface FreeboardRepository extends JpaRepository<FreeBoards,Integer> {
 
-	Optional<FreeBoards> findByNum(int num);
+	Optional<FreeBoards> findByFreenum(int freenum);
 
 
 	 	

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-
+<link rel="stylesheet" type="text/css" href="/css/register.css">
 
 
 <div id="register-container">
@@ -53,6 +53,12 @@
 
 	</div>
 </div>
+
+
+
+
+
+
 
 <!-- kakao address api script -->
  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

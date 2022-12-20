@@ -1,0 +1,29 @@
+<div id="mypage-register-container">
+  <div class="mypage-register-wrapper">
+    <a class="mypage-register-logo" href="/"><span style="color: #ffc730;">M</span><span
+        style="color: #303030;">EMBER</span></a>
+    <form action="/action_page.php" onsubmit="return false" class="mypage-register-form">
+      <div class="mypage-register-div">
+        <div class="mypage-registerform-label">
+          <label for="userid">아이디 <span style="color: #ffc730;">*</span></label>
+          <label for="username">이름 <span style="color: #ffc730;">*</span></label>
+          <label for="password">비밀번호 <span style="color: #ffc730;">*</span></label>
+          <label for="email">메일 <span style="color: #ffc730;">*</span></label>
+          <label for="address">주소 <span style="color: #ffc730;">*</span></label>
+        </div>
+        <div class="mypage-registerform-input">
+          <input type="text" class="mypage-registerform-control" value="입력된 아이디" id="userid" disabled> <input
+            type="text" class="mypage-registerform-control"  value="입력된 이름"  id="username" disabled> <input
+            type="password" class="mypage-registerform-control" value="입력된 패스워드" id="password" disabled> 
+            <input  type="email" class="mypage-registerform-control" value="입력된 이메일" id="email" disabled>
+          <input type="text" class="mypage-registerform-control"  value="입력된 주소" id="address"  disabled>
+        </div>
+      </div>
+    </form>
+    <div class="mypage-register-btn-div">
+      <button type="submit" class="mypage-btn-register" id="btn-delete">회원탈퇴</button>
+    <button type="submit" class="mypage-btn-register" id="btn-update">수정하기</button>
+    <a href="/logout" class="mypage-btn-logout" id="">로그아웃</a>
+  </div>
+  </div>
+</div>

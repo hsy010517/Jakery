@@ -1,28 +1,24 @@
 let index={
 	init: function(){
-		$("#btn-save").on("click",()=>{
+		$("#freeboardbtn-save").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.save();
 		});
-		$("#btn-delete").on("click",()=>{
+		$("#freeboardbtn-delete").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.deleteById();
 		});
-		$("#btn-update").on("click",()=>{
+		$("#freeboardbtn-update").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.update();
-		});
-		$("#btn-reply-save").on("click",()=>{
-			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
-			this.replySave();
 		});
 		
 	},
 	save: function(){
 		//alert('user의 save함수 호출됨');
 		let data={
-			title: $("#title").val(),
-			content: $("#content").val()
+			freetitle: $("#freetitle").val(),
+			freecontent: $("#freecontent").val()
 		};
 		$.ajax({ 
 			type:"POST",
@@ -38,15 +34,15 @@ let index={
 		});
 	},
 	update: function(){
-		let num=$("#num").val();
+		let freenum=$("#freenum").val();
 		
 		let data={
-			title: $("#title").val(),
-			content: $("#content").val()
+			freetitle: $("#freetitle").val(),
+			freecontent: $("#freecontent").val()
 		};
 		$.ajax({ 
 			type:"PUT",
-			url:"/api/freeboard/"+num,
+			url:"/api/freeboard/"+freenum,
 			data:JSON.stringify(data), 
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
@@ -59,10 +55,10 @@ let index={
 	},
 	
 	deleteById: function(){
-		let num=$("#num").text();
+		let freenum=$("#freenum").text();
 		$.ajax({ 
 			type:"DELETE",
-			url:"/api/freeboard/"+num,
+			url:"/api/freeboard/"+freenum,
 			dataType:"json" 
 		}).done(function(resp){
 			alert("삭제가 완료되었습니다.");

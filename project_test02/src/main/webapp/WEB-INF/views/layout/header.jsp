@@ -10,25 +10,44 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jakery</title>
-<link rel="shortvut icon" href="image\logo_J.png">
+<link rel="shortvut icon" href="/image/logo_J.png">
 
-<link rel="stylesheet" type="text/css" href="/css/reset.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="stylesheet" type="text/css" href="/css/style_t.css">
-<link rel="stylesheet" type="text/css" href="/css/board.css">
+   <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style_t.css">
+  <link rel="stylesheet" type="text/css" href="/css/board.css">
+  <link rel="stylesheet" type="text/css" href="/css/boardForm.css">
+  <link rel="stylesheet" type="text/css" href="/css/productDetail.css">
+  <link rel="stylesheet" type="text/css" href="/css/productList.css">
+  <link rel="stylesheet" type="text/css" href="/css/mypage.css">
+  <link rel="stylesheet" type="text/css" href="/css/mypage-memberForm.css">
+  <link rel="stylesheet" type="text/css" href="/css/mypage-cart.css">
+  <link rel="stylesheet" type="text/css" href="/css/mypage-buylist.css">
+
+
+  <link rel="stylesheet" type="text/css" href="/css/noticeDetail.css">
+  <link rel="stylesheet" type="text/css" href="/css/boardDetail.css">
+
+
+  
+<!-- font awesome -->
+  <script src="https://kit.fontawesome.com/a067aa947d.js" crossorigin="anonymous"></script>
+<!-- boot strap -->
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- summernote -->
 <link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js">
-	
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
@@ -45,8 +64,8 @@
 						style="color: #ffc730;">J</span><span style="color: #303030;">akery</span></a></li>
 				<li class="menu-item nav-item"><a class="nav-link" href="">News</a>
 					<ol class="sub_menu_list">
-						<li class="sub-item"><a href="">Notice</a></li>
-						<li class="sub-item"><a href="">Event</a></li>
+						<li class="sub-item"><a href="/auth/notice">Notice</a></li>
+						<li class="sub-item"><a href="/auth/event">Event</a></li>
 					</ol></li>
 				<li class="menu-item nav-item"><a class="nav-link" href="">Menu</a>
 					<ol class="sub_menu_list">
@@ -56,7 +75,7 @@
 					</ol></li>
 				<li class="menu-item nav-item"><a class="nav-link" href="">Board</a>
 					<ol class="sub_menu_list">
-						<li class="sub-item"><a href="">1 : 1</a></li>
+						<li class="sub-item"><a href="/secretboard/secretBoard">1 : 1</a></li>
 						<li class="sub-item"><a href="/auth/freeBoard">Free</a></li>
 					</ol></li>
 			</ul>
@@ -82,7 +101,7 @@
 					<ul class="navbar-nav">
 						<li class="user-item nav-item"><a class="nav-link"
 							href="/logout">Logout</a></li>
-						<li class="user-item nav-item"><a class="nav-link" href="">Mypage</a></li>
+						<li class="user-item nav-item"><a class="nav-link" href="/mypage">Mypage</a></li>
 						<li class="user-item nav-item"><a class="nav-link" href=""><span
 								class="reading-glasses"> <span
 									class="reading-glasses__circle"></span> <span

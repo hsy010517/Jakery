@@ -2,17 +2,17 @@
 <%@ include file="../layout/header.jsp"%>
 <div class="container">
 	<form>
-		<input type="hidden" id="num" value="${freeboard.num}"/>
+		<input type="hidden" id="freenum" value="${freeboard.freenum}"/>
 		<div class="form-group">
-			<input value="${freeboard.title}" type="text" class="form-control"
-			 placeholder="Enter title" id="title">
+			<input value="${freeboard.freetitle}" type="text" class="form-control"
+			 placeholder="Enter title" id="freetitle">
 		</div>
 		
 		<div class="form-group">
-			<textarea class="form-control summernote" rows="5" id="content">${freeboard.content}</textarea>
+			<textarea class="form-control summernote" rows="5" id="freecontent">${freeboard.freecontent}</textarea>
 		</div>
 	</form>
-	<button id="btn-update" class="btn btn-primary">수정</button>
+	<button id="freeboardbtn-update" class="btn btn-primary">수정</button>
 </div>
 <br/>
 <script>

@@ -19,7 +19,7 @@ public class FreeBoardService {
 
 
 	@Transactional
-	public void 글쓰기(FreeBoards freeboard, Users user) { // title, content
+	public void 자유게시판글쓰기(FreeBoards freeboard, Users user) { // title, content
 		freeboard.setCount(0);
 		freeboard.setUsers(user);
 		freeboardRepository.save(freeboard);
@@ -32,36 +32,36 @@ public class FreeBoardService {
 	@Transactional
 	/* (readOnly = true) 조회수 상승을 위해*/
 	
-	public FreeBoards 글상세보기(int num) {
-		FreeBoards fb=freeboardRepository.findByNum(num).orElseThrow(() -> {
-			return new IllegalArgumentException("글 상세보기 실패: 아이디를 찾을 수 없습니다.");
+	public FreeBoards 자유게시판글상세보기(int freenum) {
+		FreeBoards fb=freeboardRepository.findByFreenum(freenum).orElseThrow(() -> {
+			return new IllegalArgumentException("글 상세보기 실패1: 아이디를 찾을 수 없습니다.");
 		});
 		int count=fb.getCount();
 		count=count+1;
 		fb.setCount(count);
-		return freeboardRepository.findByNum(num).orElseThrow(() -> {
-			return new IllegalArgumentException("글 상세보기 실패: 아이디를 찾을 수 없습니다.");
+		return freeboardRepository.findByFreenum(freenum).orElseThrow(() -> {
+			return new IllegalArgumentException("글 상세보기 실패2: 아이디를 찾을 수 없습니다.");
 		});
 	}
 	
 	
 	@Transactional(readOnly = true)
-	public FreeBoards 수정글상세보기(int num) {
-		return freeboardRepository.findByNum(num).orElseThrow(() -> {
-			return new IllegalArgumentException("글 상세보기 실패: 아이디를 찾을 수 없습니다.");
+	public FreeBoards 자유게시판수정글상세보기(int freenum) {
+		return freeboardRepository.findByFreenum(freenum).orElseThrow(() -> {
+			return new IllegalArgumentException("수정글 상세보기 실패: 아이디를 찾을 수 없습니다.");
 		});
 	}
 	@Transactional
-	public void 글삭제하기(int num) {
-		freeboardRepository.deleteById(num);
+	public void 자유게시판글삭제하기(int freenum) {
+		freeboardRepository.deleteById(freenum);
 	}
 	@Transactional
-	public void 글수정하기(int num, FreeBoards requestBoard) {
-		FreeBoards freeboard = freeboardRepository.findByNum(num).orElseThrow(() -> {
+	public void 자유게시판글수정하기(int freenum, FreeBoards requestBoard) {
+		FreeBoards freeboard = freeboardRepository.findByFreenum(freenum).orElseThrow(() -> {
 			return new IllegalArgumentException("글 찾기 실패: 아이디를 찾을 수 없습니다.");
 		}); 
-		freeboard.setTitle(requestBoard.getTitle());
-		freeboard.setContent(requestBoard.getContent());
+		freeboard.setFreetitle(requestBoard.getFreetitle());
+		freeboard.setFreecontent(requestBoard.getFreecontent());
 	}
 	
 	
