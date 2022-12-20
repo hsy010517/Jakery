@@ -72,4 +72,6 @@
   
   <br />
 
+
+    <script type="text/javascript" src="/js/freeboard.js"></script>
 <%@ include file="../layout/footer.jsp"%>

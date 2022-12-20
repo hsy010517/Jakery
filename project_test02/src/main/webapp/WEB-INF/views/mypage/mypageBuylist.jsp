@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <link rel="stylesheet" type="text/css" href="/css/mypage-buylist.css">
- <div id="mypage-buylist-container">
+<div id="mypage-buylist-container">
     <div class="buylist">
       <div class="buylist__information">
         <ul class="buylist-info-ul">
@@ -87,13 +86,5 @@
         <button class="buylist__bigorderbtn left">후기 쓰러가기</button>
         <button class="buylist__bigorderbtn right">배송 정보 확인하기</button>
       </div>
-    </div>
-  </div>
-          </div>
-          <div class="mypage-sub-etc mypage-sub-active mypage-sub-content">예약일정</div>
-        </div>
-      </div>
-
-
     </div>
   </div>

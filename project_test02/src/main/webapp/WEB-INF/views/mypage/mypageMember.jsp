@@ -40,5 +40,3 @@
   </div>
 </div>
             <br />
-          </div>
-          <div class="mypage-sub-etc mypage-sub-active mypage-sub-content">

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+
+    
     <footer id="footer">
       <div class="navbar-list navbar-menu">
         <ul class="navbar-nav">
@@ -11,7 +15,6 @@
       </div>
       <p class="copyright">Copyright 2022. Jakery All Contents cannot be copied without permission.</p>
     </footer>
-  </div>
 
 </body>
 </html>
