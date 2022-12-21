@@ -69,4 +69,6 @@
       </div>
     </div>
   </div>
+  <%@ include file="/freeReplyBoard.jsp" %>
+  
   <%@ include file="../layout/header.jsp" %>

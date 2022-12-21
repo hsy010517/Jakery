@@ -1,21 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ include file="../layout/header.jsp"%>
-<div id="secretboard-container">
-    <div class="wrapper secretboard-wrapper">
+<%@ include file="../layout/header.jsp"%>
+
+<div id="writing-container">
+	<div class="wrapper writing-wrapper">
+		<div class="product-sub-title">
+			<span style="color: #ffc730;">F</span>REE <span
+				style="color: #ffc730;">B</span>OARD
+		</div>
+		<form>
+			<div class="freetitle">
+				<input id="freetitle" type="text" class="form-control"
+					placeholder="제목을 입력하세요.">
+			</div>
+			<div class="freecontent">
+				<textarea id="freecontent" class="form-control summernote"
+					placeholder="작성할 내용을 입력하세요." rows="20"></textarea>
+			</div>
+		</form>
+		<button id="freeboardbtn-save" class="freeboardbtn-save">저장하기</button>
+	</div>
+</div>
+
+
+<div id="freeboard-container">
+    <div class="wrapper freeboard-wrapper">
       <div class="boardlogo-div">
         <div>
-        <h1 class="secretboard-logo"><span style="color: #999;">1</span><span style="color: #303030;">:1</span><br>
-          <span style="color: #999;">B</span><span style="color: #303030;">OARD</span>
+        <h1 class="freeboard-logo"><span style="color: #ffc730;">F</span><span style="color: #303030;">REE</span><br>
+          <span style="color: #ffc730;">B</span><span style="color: #303030;">OARD</span>
         </h1>
-        <div class="secretboard-line"></div>
+        <div class="freeboard-line"></div>
       </div>
-      <div class="secretboardform-btndiv">
+      <div class="freeboardform-btndiv">
         <c:choose>
           <c:when test="${empty principal}">
-            <button class="secretboard-link-btn" onclick="location.href='/auth/loginForm';">글쓰기</button>
+            <button class="freeboard-link-btn" onclick="location.href='/auth/loginForm';">글쓰기</button>
           </c:when>
-
           <c:otherwise>
             <button class="secretboard-link-btn" onclick="location.href='/secretboard/secretSaveForm'; count();">게시판작성</button>
           </c:otherwise>
@@ -76,3 +97,4 @@
   </div>
   <script type="text/javascript" src="/js/secretboard.js"></script>
    <%@ include file="../layout/footer.jsp"%>
+

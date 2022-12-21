@@ -77,4 +77,5 @@
   </div>
 
 
+    <script type="text/javascript" src="/js/secretboard.js"></script>
 <%@ include file="../layout/footer.jsp" %>

@@ -35,7 +35,7 @@ public class FreeBoardController {
 		public String index(Model model,@PageableDefault(size=3,sort="freenum",direction=Sort.Direction.DESC) Pageable pageable) {
 			System.out.println("a");
 			
-			model.addAttribute("freeboards", freeboardService.글목록(pageable));	
+			model.addAttribute("freeboards", freeboardService.자유게시판글목록(pageable));	
 			return "board/freeBoard"; 
 		}
 		//게시글 작성
@@ -47,7 +47,7 @@ public class FreeBoardController {
 		
 		//글 상세보기
 		@GetMapping("/auth/freeboard/{freenum}")
-		public String findByNum(@PathVariable int freenum, Model model) {
+		public String findByFreenum(@PathVariable int freenum, Model model) {
 			System.out.println("글상세 호출"+freenum);
 			model.addAttribute("freeboard",freeboardService.자유게시판글상세보기(freenum));
 			return "board/freeDetail";

@@ -25,7 +25,7 @@ public class FreeBoardService {
 		freeboardRepository.save(freeboard);
 	}
 	@Transactional(readOnly = true)
-	public Page<FreeBoards> 글목록(Pageable pageable) {
+	public Page<FreeBoards> 자유게시판글목록(Pageable pageable) {
 		return freeboardRepository.findAll(pageable);
 	}
 	

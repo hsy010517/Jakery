@@ -11,7 +11,7 @@
   }
   
   .register-wrapper{
-    height: 960px;
+    height: 980px;
   }
   .register-form{
   letter-spacing: -5px;
@@ -76,7 +76,7 @@
   
   }
   
-  .btn-idCheck, .btn-postnum {
+  .registerbtn-idCheck, .btn-postnum {
   font-family: 'Noto Sans KR', sans-serif;
   font-size:14px;
   font-weight: 400;
@@ -97,15 +97,15 @@
     right: -80px;
   }
   
-  .btn-idCheck:hover, .btn-postnum:hover{
+  .registerbtn-idCheck:hover, .btn-postnum:hover{
   background-color: #ffc730;
   font-weight: 400;
   color: #020202;
   }
   
-  #btn-save{
+  #registerbtn-save{
   position:absolute;
-  top:880px;
+  top:870px;
   right: 220px;
   font-family: 'Noto Sans KR', sans-serif;
   font-size:18px;
@@ -119,7 +119,7 @@
   margin-bottom: 10px;
   }
   
-  #btn-save:hover{
+  #registerbtn-save:hover{
   background-color: #303030;
   color: #ffc730;
   border: #303030 solid 2.2px;
@@ -128,7 +128,7 @@
   
   .sns-login-link{
   position:absolute;
-  top:845px;
+  top:835px;
   right: 210px;
   font-family: 'Noto Sans KR', sans-serif;
   font-size:14px;

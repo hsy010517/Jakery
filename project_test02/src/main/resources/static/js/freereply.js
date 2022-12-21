@@ -12,10 +12,10 @@ let reply={
 	},
 	replySave: function(){
 		
-		let freereplynum=$("#freenum").val();
+		let freereplynum=$("#freereplynum").val();
 		let data={
 			freereplycontent: $("#freereplycontent").val(),
-			users: $("#replyuser").val(),
+			username: $("#replyuser").val(),
 		};
 		console.log(data);
 		console.log(freereplynum);

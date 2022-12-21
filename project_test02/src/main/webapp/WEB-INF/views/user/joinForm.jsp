@@ -3,7 +3,7 @@
 <%@ include file="../layout/header.jsp"%>
 <link rel="stylesheet" type="text/css" href="/css/register.css">
 
-
+<!-- id로 ajax로 데이터저장, 출력. id는 database명을 따름 -->
 <div id="register-container">
 	<div class="wrapper register-wrapper">
 		<a class="register-logo" href="/"><span style="color: #ffc730;">J</span><span

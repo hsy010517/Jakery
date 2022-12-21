@@ -11,7 +11,7 @@
               var btn1 = document.getElementById("chevron-down");
   
               if(con.style.display=='none'){       
-                  con.style.display = 'flex'; 
+                  con.style.display = 'block'; 
                   btn1.style.display = 'inline';   
                   btn2.style.display = 'none';   
   

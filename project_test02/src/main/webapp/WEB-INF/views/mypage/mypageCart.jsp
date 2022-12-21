@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-      <link rel="stylesheet" type="text/css" href="/css/mypage-cart.css">
-<div class="mypage-sub-etc mypage-sub-active mypage-sub-content">
             
             <!-- 장바구니 페이지 임포트 -->
 
-            <div id="mypage-cart-container">
+             <div id="mypage-cart-container">
               <div class="cart">
                 <div class="cart__information">
                   <ul class="cart-info-ul">
@@ -66,7 +64,7 @@
                           <div class="cart-title">
                             <span class="cart-sub">1줄 설명</span>
                             <p class="cart-name">상품명상품명</p>
-                            <span class="cart-price">99,999원</span>
+                            <sapn class="cart-price">99,999원</sapn>
                           </div>
                         </td>
                         <td>
@@ -101,7 +99,5 @@
                 </div>
               </div>
             </div>
-          
 
-          </div>
           <div class="mypage-sub-etc mypage-sub-active mypage-sub-content">

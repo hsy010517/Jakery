@@ -12,24 +12,28 @@
 <title>Jakery</title>
 <link rel="shortvut icon" href="/image/logo_J.png">
 
-   <link rel="stylesheet" type="text/css" href="/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <link rel="stylesheet" type="text/css" href="/css/style_t.css">
-  <link rel="stylesheet" type="text/css" href="/css/board.css">
-  <link rel="stylesheet" type="text/css" href="/css/boardForm.css">
-  <link rel="stylesheet" type="text/css" href="/css/productDetail.css">
-  <link rel="stylesheet" type="text/css" href="/css/productList.css">
-  <link rel="stylesheet" type="text/css" href="/css/mypage.css">
-  <link rel="stylesheet" type="text/css" href="/css/mypage-memberForm.css">
-  <link rel="stylesheet" type="text/css" href="/css/mypage-cart.css">
-  <link rel="stylesheet" type="text/css" href="/css/mypage-buylist.css">
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/style_t.css">
+<link rel="stylesheet" type="text/css" href="/css/board.css">
+<link rel="stylesheet" type="text/css" href="/css/boardDetail.css">
+<link rel="stylesheet" type="text/css" href="/css/boardForm.css">
+<link rel="stylesheet" type="text/css" href="/css/event.css">
+<link rel="stylesheet" type="text/css" href="/css/freereply.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage-memberForm.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage-cart.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage-buylist.css">
+<link rel="stylesheet" type="text/css" href="/css/notice.css">
+<link rel="stylesheet" type="text/css" href="/css/noticeDetail.css">
+<link rel="stylesheet" type="text/css" href="/css/productDetail.css">
+<link rel="stylesheet" type="text/css" href="/css/productDetail-review.css">
+<link rel="stylesheet" type="text/css" href="/css/productList.css">
+<link rel="stylesheet" type="text/css" href="/css/register.css">
+<link rel="stylesheet" type="text/css" href="/css/reservation.css">
+<link rel="stylesheet" type="text/css" href="/css/secret.css">
 
 
-  <link rel="stylesheet" type="text/css" href="/css/noticeDetail.css">
-  <link rel="stylesheet" type="text/css" href="/css/boardDetail.css">
-
-
-  
 <!-- font awesome -->
   <script src="https://kit.fontawesome.com/a067aa947d.js" crossorigin="anonymous"></script>
 <!-- boot strap -->
@@ -53,6 +57,7 @@
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
 <script type="text/javascript" src="/js/main.js"></script>
+ <script type="text/javascript" src="/js/reservation.js"></script>
 </head>
 
 <body>

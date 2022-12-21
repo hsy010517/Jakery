@@ -1,5 +1,5 @@
 	
-	//예약이 가득찬 날들의 배열
+	/*//예약이 가득찬 날들의 배열
 	var thisMonthFullDateList = new Array();
 	<c:forEach items="${thisMonthFullDateList}" var = "date">
 		thisMonthFullDateList.push(${date});
@@ -374,4 +374,4 @@
 		form.action = "payment";
 		form.target = "payment";
 		form.submit();
-	}
+	}*/
