@@ -32,13 +32,13 @@
         <c:forEach var="secretboard" items="${secretboards.content}">
           <div>
           <ul class="board-list">
-            <li class="board-item"><a href="/auth/board/${secretboard.num}" class="secretboard-num dummy">num</a>
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">num</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.num}" class="board-title">${secretboard.title}  </a>
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-title">${secretboard.title}  </a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.num}" class="board-id ">username수정</a>
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-id ">username수정</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.num}" class="secretboard-count dummy">
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-count dummy">
               <span class="checkmark">
                 <!--답장 완료 시 / 미 완료시 클래스 전자 후자 구분해서 choose 넣어주기-->
                   <div class="checkmark_stem checkmark_stem_none"></div>
@@ -74,5 +74,5 @@
       </ul>
     </div>
   </div>
-  
+  <script type="text/javascript" src="/js/secretboard.js"></script>
    <%@ include file="../layout/footer.jsp"%>

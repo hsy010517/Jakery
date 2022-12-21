@@ -15,8 +15,7 @@ let reply={
 		let freereplynum=$("#freenum").val();
 		let data={
 			freereplycontent: $("#freereplycontent").val(),
-			replynum: $("#replynum").val(),
-			user: $("#replyuser").val(),
+			users: $("#replyuser").val(),
 		};
 		console.log(data);
 		console.log(freereplynum);
