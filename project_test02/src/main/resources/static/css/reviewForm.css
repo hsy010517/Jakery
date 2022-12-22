@@ -1,0 +1,367 @@
+@charset "UTF-8";#reviewForm-container{
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  position:relative;
+  margin: 0 auto;
+}
+.reviewForm-wrapper{
+  width: 80%;
+  background-color: #fff;
+  height: 100%;
+  max-width: 960px;
+  min-height: 800px;
+  margin: 0 auto;
+  
+}
+
+.close1{
+  position: absolute;
+  right: 25px;
+  top: -10px;
+  color: #303030;
+  width: 20px;
+  height: 20px;
+}
+
+.close1:after {
+
+  content: "\00d7";
+  font-size: 12pt;
+  line-height: 50px;
+  color: #303030;
+}
+
+.reviewForm-content{
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0px 5px 8px #ccc;
+  padding-bottom: 50px;
+  min-height: 800px;
+
+}
+
+.reviewForm-content-head{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 500;
+  color: #fff;
+  padding: 10px 30px ;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #303030;
+  position: relative;
+}
+
+.reviewForm-content-head>svg{
+  margin-right: 20px;
+}
+
+.reviewForm-title{
+  font-family:'Roboto', sans-serif;
+  font-size:32px;
+  font-weight: 700;
+  color: #303030;
+  padding:20px;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.reviewForm-main{
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.legend{
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:18px;
+  font-weight: 500;
+  color: #303030;
+  text-align: center;
+  margin: 20px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.reviewForm-content-div {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+.select-li{
+  margin-bottom: 50px;
+}
+.select-li>*, .reviewForm-main-label{
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 500;
+}
+.reviewForm-main-label{
+color: #303030;
+margin: 0 auto;
+margin-bottom: 20px;
+font-size: 15px;
+}
+.select-dp-list{
+  margin-left: 30px;
+}
+
+  .reviewFormList__list {
+  border-top: solid 1.5px #303030;
+  border-bottom: solid 1.5px #303030;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+
+}
+
+.reviewFormList__list>thead{
+  text-align: center;
+  font-weight: bold;
+  height: 35px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.reviewFormList__list__tbody {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  height: 100%;
+}
+.reviewFormList__list__detail{
+  border-bottom: 1px solid lightgrey;
+}
+
+.reviewFormList_num{
+  display: block;
+  margin: 0% auto;
+  text-align: center;
+  font-weight: 400;
+}
+.reviewFormList__list__detail>td {
+  height: 260px;
+}
+
+.reviewFormList-img {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  margin: auto 0;
+}
+
+.reviewFormList-main{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 20px;
+}
+
+.reviewFormList-title{
+  display: block;
+  margin: auto 0 auto 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  line-height: 1.5;
+}
+.reviewFormList-price{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.reviewFormList-option-num{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.reviewFormList-sub{
+  font-size:12px;
+  font-weight: 300;
+  color: #ffc730;
+}
+
+.reviewFormList-name{
+  font-size:18px;
+  font-weight: 600;
+  color: #303030;
+}
+
+.reviewFormList-price2, .reviewFormList-pay, .reviewFormList-op{
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  margin: auto 0;
+  color: #303030;
+}
+.reviewFormList-price2{
+  font-size: 16px;
+  margin-top: 10px;
+}
+.reviewFormList-op{
+  margin-bottom: -15px;
+}
+.reviewFormList__list__option{
+  display: block;
+  margin: auto 0;
+}
+
+.star-rating {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  padding:0 .2em;
+  text-align:center;
+  width:5em;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color:#ccc;
+  cursor:pointer;
+}
+
+.star-rating :checked ~ label {
+  color:#ffc730;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:#fc0;
+}
+
+.order-btn-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-btn-div>button{
+  width: 120px;
+  height: 40px;
+  margin: 30px 15px 10px 15px;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:16px;
+  font-weight: 600;
+  color: #303030;
+}
+.reviewForm-submit-btn{
+  background-color: #ffc730;
+
+}
+.reviewForm-reset-btn{
+  background-color: #eee;
+}
+
+.reviewForm-submit-btn:hover{
+  background-color: #303030;
+  color: #ffc730;
+
+}
+.reviewForm-reset-btn:hover{
+  background-color: #ddd;
+}
+
+.reviewForm-field{
+  display: block;
+  margin: 0 auto;
+}
+
+.reviewForm-ul1>div:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.reviewForm-ul1>div{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  font-weight: 400;
+  color: #777;
+}
+
+.reviewform-input-item{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  font-weight: 400;
+  color: #777;
+  width: 100px;
+  border: none;
+  background-color: #fff;
+}
+
+.reviewForm-productdiv>*, .reviewForm-productdiv>li>input{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 400;
+  color: #303030;
+  padding-top: 2px;
+}
+
+.reviewForm-productdiv{
+  border-bottom: #ccc 1px solid;
+  padding: 10px 0px;
+}
+
+
+.reviewForm-ul2{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 400;
+  color: #303030;
+}
+
+.reviewForm-ul2>li:first-child{
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  margin-top: 20px;
+}
+
+.reviewForm-ul2>li:first-child{
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  margin-top: 20px;
+}
+
+.reviewForm-ul2>li:nth-child(2){
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.reviewform-select-div>select{
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 160px;
+  padding: 10px 0px;
+  border:#ccc 1px solid;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 25px;
+  color: #303030;
+  appearance:none;
+}
+
+.reviewform-caption{
+  width: 97%;
+  resize: none;
+  border: #ccc 1px solid;
+  outline: none;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}

@@ -13,3 +13,32 @@
   min-height: 800px;
   margin: 0 auto;
 }
+.mypage-registerform-input{
+  position: relative;
+}
+.btn-postnum2 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 400;
+  color: #303030;
+  background-color: #fff;
+  border: #ffc730 solid 1.5px;
+  padding: 6px 6px;
+  width: 90px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 0;
+  }
+
+  .btn-postnum2{
+    top: 440px;
+    right: -90px;
+  }
+  
+  .btn-postnum2:hover{
+  background-color: #ffc730;
+  font-weight: 400;
+  color: #020202;
+  }
+  
