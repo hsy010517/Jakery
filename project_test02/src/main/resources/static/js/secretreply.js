@@ -12,23 +12,22 @@ let reply={
 	},
 	replySave: function(){
 		
-		let freenum=$("#freenum").val();
+		let secretnum=$("#secretnum").val();
 		let data={
-			freereplycontent: $("#freereplycontent").val(),
-			replynum: $("#replynum").val(),
-			user: $("#replyuser").val(),
+			secretreplycontent: $("#secretreplycontent").val(),
+			username: $("#secretreplyuser").val(),
 		};
 		console.log(data);
-		console.log(freenum);
+		console.log(secretnum);
 		$.ajax({ 
 			type:"POST",
-			url:"/api/freeboard/"+freenum+"/freereply",
+			url:"/api/secretboard/"+secretnum+"/secretreply",
 			data:JSON.stringify(data), 
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
 		}).done(function(resp){
 			alert("댓글 작성이 완료되었습니다.");
-			location.href="/auth/freeBoard";
+			location.href="/secretboard/secretBoard";
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
@@ -37,14 +36,14 @@ let reply={
 	
 	//reply num으로 삭제
 	
-	replyDelete: function(deletenum){
+	replyDelete: function(secretdeletenum){
 		/*let deletenum=$("#deletenum").text();*/
-		alert(deletenum);
+		alert(secretdeletenum);
 
 		$.ajax({ 
 			type:"DELETE",
 			//reply num
-			url:"/api/scretboard/secretreply/"+deletenum,
+			url:"/api/scretboard/secretreply/"+secretdeletenum,
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
 		}).done(function(resp){

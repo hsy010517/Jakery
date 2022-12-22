@@ -34,7 +34,7 @@
             <ul class="board-list">
             <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-num">${freeboard.freenum}</a>
             </li>
-            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-title">${freeboard.freetitle}<span style="font-weight:300; color:#ffc730;"> (댓글수)</span></a>
+            <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-title">${freeboard.freetitle}<span style="font-weight:300; color:#ffc730;"> (${freeboard.freereplycnt})</span></a>
             </li>
             <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-id">${freeboard.users.userid}</a>
             </li>

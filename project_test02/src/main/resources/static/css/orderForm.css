@@ -1,0 +1,342 @@
+#orderForm-container{
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  position:relative;
+  margin: 0 auto;
+}
+.orderForm-wrapper{
+  width: 80%;
+  background-color: #fff;
+  height: 100%;
+  max-width: 960px;
+  min-height: 800px;
+  margin: 0 auto;
+  
+}
+
+.close1{
+  position: absolute;
+  right: 25px;
+  top: -10px;
+  color: #303030;
+  width: 20px;
+  height: 20px;
+}
+
+.close1:after {
+
+  content: "\00d7";
+  font-size: 12pt;
+  line-height: 50px;
+  color: #303030;
+}
+
+.orderForm-content{
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0px 5px 8px #ccc;
+  padding-bottom: 50px;
+  min-height: 800px;
+
+}
+
+.orderForm-content-head{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 500;
+  color: #303030;
+  padding: 10px 30px ;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffc730;
+  position: relative;
+}
+
+.orderForm-content-head>svg{
+  margin-right: 20px;
+}
+
+.orderForm-title{
+  font-family:'Roboto', sans-serif;
+  font-size:32px;
+  font-weight: 700;
+  color: #303030;
+  padding:20px;
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.orderForm-main{
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.legend{
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:18px;
+  font-weight: 500;
+  color: #303030;
+  text-align: center;
+  margin: 20px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.orderForm-content-div {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+.select-li{
+  margin-bottom: 50px;
+}
+.select-li>*, .orderForm-main-label{
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:14px;
+  font-weight: 500;
+}
+.orderForm-main-label{
+color: #303030;
+margin: 0 auto;
+margin-bottom: 20px;
+font-size: 15px;
+}
+.select-dp-list{
+  margin-left: 30px;
+}
+
+  .orderFormList__list {
+  border-top: solid 1.5px #303030;
+  border-bottom: solid 1.5px #303030;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+
+}
+
+.orderFormList__list>thead{
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.orderFormList__list__tbody {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  height: 100%;
+}
+.orderFormList__list__detail{
+  border-bottom: 1px solid lightgrey;
+}
+
+.orderFormList_num{
+  display: block;
+  margin: 0% auto;
+  text-align: center;
+  font-weight: 400;
+}
+.orderFormList__list__detail>td {
+  height: 140px;
+}
+
+.orderFormList-img {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: auto 0;
+}
+
+.orderFormList-main{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 20px;
+}
+
+.orderFormList-title{
+  display: block;
+  margin: auto 0 auto 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  line-height: 1.5;
+}
+.orderFormList-price{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.orderFormList-option-num{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.orderFormList-sub{
+  font-size:12px;
+  font-weight: 300;
+  color: #ffc730;
+}
+
+.orderFormList-name{
+  font-size:18px;
+  font-weight: 600;
+  color: #303030;
+}
+
+.orderFormList-price2, .orderFormList-pay, .orderFormList-op{
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  margin: auto 0;
+  color: #303030;
+}
+.orderFormList-price2{
+  font-size: 16px;
+  margin-top: 10px;
+}
+.orderFormList-op{
+  margin-bottom: -15px;
+}
+.orderFormList__list__option{
+  display: block;
+  margin: auto 0;
+}
+
+.product-li{
+  margin-bottom: 50px;
+}
+
+/*정보*/
+
+
+.orderForm-userfield>ul, .orderForm-deliveryfield>ul, .orderForm-deliveryfield-memo-div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.orderForm-userfield>ul>div, .orderForm-deliveryfield>ul>div{
+  margin-right: 50px;
+}
+
+.orderForm-userfield-label-div, .orderForm-deliveryfield-label-div{
+  display: block;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:15px;
+  font-weight: 500;
+  margin-top: 25px;
+}
+
+.orderForm-userfield-label-div>li, .orderForm-deliveryfield-label-div>li{
+  padding-bottom: 24px;
+}
+
+.orderForm-userfield-input-div>li, .orderForm-deliveryfield-input-div>li{
+  display: block;
+  padding-bottom: 20px;
+}
+
+.orderForm-userfield-input-div>li>input, .orderForm-deliveryfield-input-div>li>input{
+  border: none;
+  padding: 5px;
+  background: none;
+  border-bottom: #ccc 2px solid;
+  width: 150px;
+  margin-right: 20px;
+}
+
+.delivery-btn{
+  background-color: #fff;
+  border: #ddd 1px solid;
+  padding: 8px 16px;
+  display: inline;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  font-weight: 500;
+}
+
+
+.delivery-btn:hover{
+  background-color: #ddd;
+}
+
+.delivertfield-memo-title{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:15px;
+  font-weight: 500;
+  margin-right: 50px;
+}
+
+#myDropdown{
+  margin-bottom: 10px;
+  border: #ccc 1px solid;
+  padding: 5px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:12px;
+  font-weight: 300;
+}
+
+#txtBox{
+  font-family: 'Noto Sans KR', sans-serif;
+  border: #ccc 1px solid;
+  font-size:14px;
+  font-weight: 300; 
+  padding: 10px;
+}
+
+.orderForm-deliveryfield{
+  margin-bottom: 50px;
+}
+
+/*총금액*/
+
+.orderForm-totalfield{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:24px;
+  font-weight: 600;
+text-align: right;
+line-height: 1.5;
+margin-top: 50px;
+margin-bottom: 50px; }
+
+.order-btn-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-btn-div>button{
+  width: 120px;
+  height: 40px;
+  margin: 30px 15px 10px 15px;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size:16px;
+  font-weight: 600;
+  color: #303030;
+}
+.orderForm-submit-btn{
+  background-color: #ffc730;
+
+}
+.orderForm-reset-btn{
+  background-color: #eee;
+}
+
+.orderForm-submit-btn:hover{
+  background-color: #303030;
+  color: #ffc730;
+
+}
+.orderForm-reset-btn:hover{
+  background-color: #ddd;
+}

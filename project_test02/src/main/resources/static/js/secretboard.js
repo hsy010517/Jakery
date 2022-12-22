@@ -2,23 +2,19 @@ let index={
 	init: function(){
 		$("#secretboardbtn-save").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
-			this.save();
+			this.secretSave();
 		});
 		$("#secretboardbtn-delete").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
-			this.deleteById();
+			this.secretDeleteById();
 		});
 		$("#secretboardbtn-update").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
-			this.update();
-		});
-		$("#secretboardbtn-reply-save").on("click",()=>{
-			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
-			this.replySave();
+			this.secretUpdate();
 		});
 		
 	},
-	save: function(){
+	secretSave: function(){
 		//alert('user의 save함수 호출됨');
 		let data={
 			secrettitle: $("#secrettitle").val(),
@@ -37,7 +33,7 @@ let index={
 			alert(JSON.stringify(error));
 		});
 	},
-	update: function(){
+	secretUpdate: function(){
 		let secretnum=$("#secretnum").val();
 		
 		let data={
@@ -58,7 +54,7 @@ let index={
 		});
 	},
 	
-	deleteById: function(){
+	secretDeleteById: function(){
 		let secretnum=$("#secretnum").text();
 		$.ajax({ 
 			type:"DELETE",

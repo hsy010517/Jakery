@@ -1,63 +1,102 @@
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal" />
-</sec:authorize>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
-  <div id="freereply-container">
-    <div class="wrapper freereply-wrapper">
-      <div class="freereply-content">
-  
-        <div class="freereply-content-item freereply-content-head">
-          <svg viewBox="0 0 20 20" width="15" height="10" style="fill:#303030;">
-            <rect width="25" height="3"></rect>
-            <rect y="8" width="25" height="3"></rect>
-            <rect y="16" width="25" height="3"></rect>
-          </svg>
-          <a href="보드 목록으로 돌아가기">REPLYS</a>
-          <div onclick="history.back()" class="close close1"></div>
-        </div>
-        <div class="freereply-form-div">
-          <!-- 등록 폼  -->
-          <form class="freereply-form">
-            <input type="hidden" id="free-num" value="${num}" />
-            <input type="hidden" id="reply-num" value="${replyboard.num}" />
-            <div class="freereply-username">작성자: <input type="text" id="reply-user" value="${principal.user.username}" disabled/></div>
-            <textarea id="content" class="reply-form-note" rows="5" cols="150" placeholder="댓글을 입력하세요."></textarea>
-          </form>
-          <button id="freeboardreplybtn-save" class="freeboard-reply-btn">등록</button>
-          <!-- 목록 폼  -->
-        </div>
-        <br>
-        <div class="freereply-contents-div">
-          <div class="freereply-contents-header">
-            <a href="javascript:doDisplay()">댓글 목록 (댓글수)
-            <i id="chevron-down" class="fa-sharp fa-solid fa-chevron-down"></i>
-            <i id="chevron-up"  class="fa-sharp fa-solid fa-chevron-up"></i></a>
-          </div>
-          <c:forEach var="replyboard" items="${replyboards.content}">
-            <div class="freereply-contents-main">
-                <c:if test="${reply.user.username==principal.user.username}">
-                  <div class="freereply-contents-main-item" id="myDIV">
+<!-- core, security -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="principal" />
+	</sec:authorize>
+
+<!-- jquery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+		<c:forEach var="secretreplyboard" items="${secretreplyboards.content}">
+		<!-- 작성자가 본인 댓글 보기 -->
+		<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
+		<c:if test="${secretreplyboard.users.username == principal.user.username || secretreplyboard.users.roles=='ADMIN'}">
+		<c:if test="${secretreplyboard.secretboards.secretnum==secretboard.secretnum }">
+            <div class="freereply-contents-main"> 
+                  <div class="freereply-contents-main-item" >
+                  	<form>
+	                    <div class="freereply-form-title">
+	                      작성자: ${secretreplyboard.users.username} ${secretreplyboard.users.userid}
+	                      작성날짜: ${secretreplyboard.users.createDate}
+	                    <input type="hidden" value="게시판 번호 ${secretreplyboard.secretboards.secretnum}" size="10" disabled>
+	                    <input type="hidden" value="${secretreplyboard.secretreplynum}" size="8" disabled id="secretdeletenum">
+	                    </div>
+	                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${secretreplyboard.secretreplycontent}</textarea>
+                 	</form>
+                 
+                 	<button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${secretreplyboard.secretreplynum})">삭제 x</button>
+   					</div>
+            </div>
+            </c:if>
+            </c:if>
+            </sec:authorize>
+            
+            <!-- 어드민이 댓글 보기 -->
+            
+            
+            
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <c:if test="${secretreplyboard.users.username != principal.user.username}">
+             	 <div class="freereply-contents-main"> 
+                  <div class="freereply-contents-main-item" >
                   <form>
                     <div class="freereply-form-title">
-                      작성자: ${replyboard.users.username} (${replyboard.users.userid})
-                      작성날짜: ${replyboard.users.createDate}
-                    <input type="hidden" value="게시판 번호 ${replyboard.boards.num}" size="10" disabled>
-                    <input type="hidden" value="${replyboard.num}" size="8" disabled id="deletenum">
+                      작성자: ${secretreplyboard.users.username} ${secretreplyboard.users.userid}
+                      작성날짜: ${secretreplyboard.users.createDate}
+                    <input type="hidden" value="게시판 번호 ${secretreplyboard.secretboards.secretnum}" size="10" disabled>
+                    <input type="hidden" value="${secretreplyboard.secretreplynum}" size="8" disabled id="secretdeletenum">
                     </div>
-                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${replyboard.contents}</textarea>
+                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${secretreplyboard.secretreplycontent}</textarea>
                  </form>
-                  <button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${replyboard.num})">삭제 x</button>
-                  </div>
-                  </c:if>
-            </div>
+					<button type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${secretreplyboard.secretreplynum})">삭제 x</button>
+                  </div>                 
+            	</div>
+            </c:if>
+             </sec:authorize>  
           </c:forEach>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-    <script type="text/javascript" src="/js/secretreply.js"></script>
+          
+
+
+		${param.secretcontent}
+		
+	
+<!-- 나중에 -->
+	<%-- 	<sec:authorize access="hasRole('ROLE_USER')">
+	<c:if test="${secretreplyboard.users.username != principal.user.username || secretreplyboard.users.roles=='ADMIN'}">
+	</c:if>
+	</sec:authorize>
+	<br/> --%>
+
+
+<!--    <script type="text/javascript">
+	 window.onload = (event) => {
+         var btn1 = document.getElementById("chevron-up");
+         btn1.style.display = 'none';   
+       };
+         var bDisplay = true; function doDisplay(){    
+             var con = 
+             /*document.getElementsByClassName("myDIV");*/
+             document.getElementById("myDIV"); 
+             var btn2 = document.getElementById("chevron-up");
+             var btn1 = document.getElementById("chevron-down");
+ 
+             if(con.style.display=='none'){       
+                 con.style.display = 'flex'; 
+                 btn1.style.display = 'inline';   
+                 btn2.style.display = 'none';   
+ 
+             }else{       
+                 con.style.display = 'none'; 
+                 btn1.style.display = 'none';
+                 btn2.style.display = 'inline';   
+             } 
+         } ;
+	</script>	 -->   
+          <script type="text/javascript" src="/js/secretreply.js"></script>
+

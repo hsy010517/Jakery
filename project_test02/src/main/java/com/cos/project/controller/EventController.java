@@ -8,7 +8,7 @@ public class EventController {
 	
 	@GetMapping({"/auth/event"})
 	public String main() {
-		return "board/event";
+		return "news/event";
 	}
 
 }

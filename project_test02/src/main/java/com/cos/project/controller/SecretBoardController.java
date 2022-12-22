@@ -18,7 +18,7 @@ public class SecretBoardController {
 	SecretBoardService secretBoardService;
 	
 	//1:1게시판 목록
-	@GetMapping({"/board/secretBoard"})
+	@GetMapping({"/secretboard/secretBoard"})
 	public String secretBoard(Model model,@PageableDefault(size=3,sort="secretnum",direction=Sort.Direction.DESC) Pageable pageable) {
 		System.out.println("a");
 		
@@ -26,7 +26,7 @@ public class SecretBoardController {
 		return "board/secretBoard"; 
 	}
 	
-	//1:1 게시글 작성
+			//1:1 게시글 작성
 			//USER 권한이 필요
 			@GetMapping({"/secretboard/secretSaveForm"})
 			public String secretSaveForm() {

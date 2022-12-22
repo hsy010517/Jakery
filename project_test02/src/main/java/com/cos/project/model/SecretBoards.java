@@ -18,6 +18,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Formula;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -48,6 +49,9 @@ public class SecretBoards {
 	
 	@Lob 
 	private String secretcontent;
+	
+	@Formula("(SELECT count(1) FROM secretreplys s WHERE s.secretboardsnum = secretnum)")
+	private int secretreplycnt;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="username")

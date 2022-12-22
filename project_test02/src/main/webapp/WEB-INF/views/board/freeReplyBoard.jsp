@@ -13,27 +13,29 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 
-		<c:forEach var="replyboard" items="${freereplyboards.content}">
+		<c:forEach var="freereplyboard" items="${freereplyboards.content}">
+		<c:if test="${freereplyboard.freeboards.freenum==freeboard.freenum}">
             <div class="freereply-contents-main">
-                <c:if test="${replyboard.users.username==principal.user.username}">
+                
                   <div class="freereply-contents-main-item" >
                   <form>
                     <div class="freereply-form-title">
-                      작성자: ${replyboard.users.username} (${replyboard.users.userid})
-                      작성날짜: ${replyboard.users.createDate}
-                    <input type="hidden" value="게시판 번호 ${replyboard.freeboards.freenum}" size="10" disabled>
-                    <input type="hidden" value="${replyboard.freereplynum}" size="8" disabled id="deletenum">
+                      작성자: ${freereplyboard.users.username} (${freereplyboard.users.userid})
+                      작성날짜: ${freereplyboard.users.createDate}
+                    <input type="hidden" value="게시판 번호 ${freereplyboard.freeboards.freenum}" size="10" disabled>
+                    <input type="hidden" value="${freereplyboard.freereplynum}" size="8" disabled id="deletenum">
                     </div>
-                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${replyboard.freereplycontent}</textarea>
+                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${freereplyboard.freereplycontent}</textarea>
                  </form>
-                 	<button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${replyboard.freereplynum})">삭제 x</button>
-                  </div>
+                 <c:if test="${freereplyboard.users.username==principal.user.username}">
+                 	<button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${freereplyboard.freereplynum})">삭제 x</button>
                   </c:if>
-                	<sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-						 <button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${replyboard.freereplynum})">삭제 x</button>
+                  <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+						 <button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${freereplyboard.freereplynum})">삭제 x</button>
 					</sec:authorize>
-	                 
+                  </div> 
             </div>
+          </c:if>
           </c:forEach>
 
 
@@ -78,6 +80,6 @@
          } ;
 	</script>	 -->   
       
-<!--  <script type="text/javascript" src="/js/freeDetailCss.js"></script -->>
+<!--  <script type="text/javascript" src="/js/freeDetailCss.js"></script -->
  <script type="text/javascript" src="/js/freereply.js"></script>
 

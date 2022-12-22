@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class NoticeController {
 	@GetMapping({"/auth/notice"})
 	public String main() {
-		return "board/notice";
+		return "news/notice";
 	}
 
 }

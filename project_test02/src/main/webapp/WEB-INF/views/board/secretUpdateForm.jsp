@@ -5,22 +5,24 @@
 <div id="writing-container">
 	<div class="wrapper writing-wrapper">
 		<div class="product-sub-title">
-			<span style="color: #ffc730;">F</span>REE <span
+			<span style="color: #ffc730;">1</span>:1 <span
 				style="color: #ffc730;">B</span>OARD
 		</div>
 		<form>
+		<input value="${secretboard.secretnum}" type="hidden" id="secretnum">
 			<div class="freetitle">
-				<input value="${freeboard.freetitle}" id="freetitle" type="text" class="form-control"
+				<input value="${secretboard.secrettitle}" id="secrettitle" type="text" class="form-control"
 					placeholder="제목을 입력하세요.">
 			</div>
 			<div class="freecontent">
-				<textarea id="freecontent" class="form-control summernote"
-				 rows="20">${freeboard.freecontent}</textarea>
+				<textarea id="secretcontent" class="form-control summernote"
+				 rows="20">${secretboard.secretcontent}</textarea>
 			</div>
 		</form>
-		<button id="freeboardbtn-update" class="freeboardbtn-save">수정하기</button>
+		<button id="secretboardbtn-update" class="freeboardbtn-save">수정하기</button>
 	</div>
 </div>
+<script src="/js/secretboard.js"></script>
 <%@ include file="../layout/footer.jsp"%>
 
 

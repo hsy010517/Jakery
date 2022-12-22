@@ -32,9 +32,10 @@ public class FreeReplyController {
 			 */
 			
 			//리플라이 저장
-			@GetMapping({"/auth/freeboard/freereply"})
-			public String replys() {
-				return "board/freeDetail";
-			
-			}
+			/*
+			 * @GetMapping({"/auth/freeboard/freereply"}) public String replys() { return
+			 * "board/freeDetail";
+			 * 
+			 * }
+			 */
 }

@@ -19,6 +19,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Formula;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -53,6 +54,9 @@ public class FreeBoards {
 	
 	@Column
 	private int count;
+	
+	@Formula("(SELECT count(1) FROM freereplys f WHERE f.Freeboardsnum = freenum)")
+	private int freereplycnt;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="username")

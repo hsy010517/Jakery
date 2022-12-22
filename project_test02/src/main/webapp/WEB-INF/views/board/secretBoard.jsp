@@ -13,13 +13,12 @@
       </div>
       <div class="secretboardform-btndiv">
         <c:choose>
-          <c:when test="${empty principal}">
-            <button class="secretboard-link-btn" onclick="location.href='/auth/loginForm';">글쓰기</button>
-          </c:when>
-
-          <c:otherwise>
-            <button class="secretboard-link-btn" onclick="location.href='/secretboard/secretSaveForm';">게시판작성</button>
-          </c:otherwise>
+       		<c:when test="${empty principal}">
+            	<button class="secretboard-link-btn" onclick="location.href='/auth/loginForm';">글쓰기</button>
+          	</c:when>
+         	<c:otherwise>
+            	<button class="secretboard-link-btn" onclick="location.href='/secretboard/secretSaveForm';">게시판작성</button>
+          	</c:otherwise>
         </c:choose>
       </div>
       </div>
@@ -29,27 +28,70 @@
         빠른 답변이 필요한 문의의 경우 전화 문의를 이용해주시기 바랍니다. (1234-5678, 평일 9:00~18:00)
       </div>
       <div class="board-list-title">LIST</div>
-      <div class="board-div">
+      <!-- 작성자 본인이 자신의 1:1게시판을 사용하는 경우 -->
+
+	
         <c:forEach var="secretboard" items="${secretboards.content}">
-          <div>
-          <ul class="board-list">
-            <li class="board-item"><a href="/auth/board/${secretboard.secretnum}" class="secretboard-num dummy">num</a>
+                <div class="board-div">     
+                <c:if test="${secretboard.users.username == principal.user.username}">
+          <ul class="board-list">  
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.secretnum}" class="board-title">${secretboard.secrettitle}  </a>
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-title">${secretboard.secrettitle} (${secretboard.secretreplycnt}) </a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.secretnum}" class="board-id ">${secretboard.users.userid}</a>
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-id ">${secretboard.users.userid}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${secretboard.secretnum}" class="secretboard-count dummy">
+            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-count dummy">
               <span class="checkmark">
                 <!--답장 완료 시 / 미 완료시 클래스 전자 후자 구분해서 choose 넣어주기-->
-                  <div class="checkmark_stem checkmark_stem_none"></div>
-                  <div class="checkmark_kick checkmark_stem_none"></div>
+                 <c:choose>
+		                <c:when test="${secretboard.secretreplycnt == 0}">
+		                	<div class="checkmark_stem_none"></div>
+		                  	<div class="checkmark_kick_none"></div>
+		                </c:when>
+		                <c:otherwise>
+		                	<div class="checkmark_stem"></div>
+		                	<div class="checkmark_kick"></div>
+		                </c:otherwise>
+	                </c:choose>
                 </span></a>
             </li>
           </ul>
+          </c:if>
+           <!-- 어드민이 쓸 수 있게 -->
+          <sec:authorize access="hasRole('ROLE_ADMIN')">
+          <c:if test="${secretboard.users.username != principal.user.username}">
+           	<ul class="board-list">  
+	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
+	            </li>
+	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-title">${secretboard.secrettitle} (${secretboard.secretreplycnt}) </a>
+	            </li>
+	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-id ">${secretboard.users.userid}</a>
+	            </li>
+	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-count dummy">
+	              <span class="checkmark">
+	                <!--답장 완료 시 / 미 완료시 클래스 전자 후자 구분해서 choose 넣어주기-->
+	                <c:choose>
+		                <c:when test="${secretboard.secretreplycnt >= 1}">
+		                	<div class="checkmark_stem_none"></div>
+		                  	<div class="checkmark_kick_none"></div>
+		                </c:when>
+		                <c:otherwise>
+		                	<div class="checkmark_stem"></div>
+		                	<div class="checkmark_kick"></div>
+		                </c:otherwise>
+	                </c:choose>
+	                  <!-- <div class="checkmark_stem checkmark_stem_none"></div>
+	                  <div class="checkmark_kick checkmark_stem_none"></div> -->
+	                </span></a>
+	            </li>
+          	</ul>
+           </c:if>
+           </sec:authorize>
+           
         </div>
         </c:forEach>
-      </div>
+
       <ul class="pagination justify-content-center">
         <c:choose>
           <c:when test="${secretboards.first}">

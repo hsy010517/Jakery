@@ -3,7 +3,6 @@
 <%@ include file="../layout/header.jsp" %>
 
   <div id="boardDetail-container">
-
     <div class="wrapper boardDetail-wrapper">
       <div class="boardDetail-content">
         <div class="boardDetail-content-item boardDetail-content-head">
@@ -12,7 +11,7 @@
             <rect y="8" width="25" height="3"></rect>
             <rect y="16" width="25" height="3"></rect>
           </svg>
-          <a href="보드 목록으로 돌아가기">FREE BOARD</a>
+          <a href="/auth/freeBoard">FREE BOARD</a>
             <div onclick="history.back()" class="close close1"></div>
         </div>
         <ul class="boardDetail-content-item boardDetail-content-title">
@@ -74,20 +73,11 @@
   </div>
 
 
-<div class="container">
-	<%-- <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-		<button id="freeboardbtn-delete" class="btn btn-danger" value="${freeboard.users.num}">delete </button>	
-	</sec:authorize> --%>
-	<div>
-	<br />
-	<br />
-	<hr />
-	<script type="text/javascript" src="/js/freeboard.js"></script>
+
 
 <!-- 관리용 -->
 <%--  <a href="http://localhost:8013/auth/freeboard/${freeboard.freenum}/freereply">댓글</a>  --%>
-</div>
-<br>
+
 
 
 <!--댓글 게시판  -->
@@ -109,8 +99,10 @@
           <form class="freereply-form">
             <input type="hidden" id="freereplynum" value="${freeboard.freenum}" />
             <div class="freereply-username">작성자: <input type="text" id="replyuser" value="${principal.user.username}" disabled/></div>
+           <div class="freereply-comment dummy"> 
             <textarea id="freereplycontent" class="reply-form-note" rows="5" cols="130" placeholder="댓글을 입력하세요."></textarea>
           	<button id="freeboardreplybtn-save" class="freeboard-reply-btn" type="submit">등록</button>
+          </div>
           </form>
           
     	<!-- 목록 폼  -->
@@ -137,11 +129,11 @@
   
   
  
-<!-- 현재까지 -------------------------- -->
 
 
 
 <!-- 붙여놓은것 -----------------------------------------------------  -->
 <script type="text/javascript" src="/js/freeDetailCss.js"></script>
 <script type="text/javascript" src="/js/freereply.js"></script>
+<script type="text/javascript" src="/js/freeboard.js"></script>
 <%@ include file="../layout/footer.jsp" %>

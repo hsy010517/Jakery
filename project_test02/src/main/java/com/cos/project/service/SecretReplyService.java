@@ -20,8 +20,8 @@ public class SecretReplyService {
 	SecretBoardRepository secretboardRepository;
 	
 	@Transactional
-	public void 일대일게시판댓글쓰기(int secretnum, SecretReplys requestReplys, Users user) {
-		SecretBoards secretboard = secretboardRepository.findBySecretnum(secretnum).orElseThrow(() -> {
+	public void 일대일게시판댓글쓰기(int secretreplynum, SecretReplys requestReplys, Users user) {
+		SecretBoards secretboard = secretboardRepository.findBySecretnum(secretreplynum).orElseThrow(() -> {
 			return new IllegalArgumentException("1:1댓글 쓰기 실패: 게시글 아이디를 찾을 수 없습니다.");
 		}); 
 		requestReplys.setUsers(user);
