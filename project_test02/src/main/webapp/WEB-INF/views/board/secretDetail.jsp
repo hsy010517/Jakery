@@ -97,7 +97,7 @@
         <br>
         <div class="freereply-contents-div">
           <div class="freereply-contents-header">
-            <a href="javascript:doDisplay()">댓글 목록 (댓글수)
+            <a href="javascript:doDisplay()">댓글 목록 (${secretboard.secretreplycnt})
             <i id="chevron-down" class="fa-sharp fa-solid fa-chevron-down"></i>
             <i id="chevron-up"  class="fa-sharp fa-solid fa-chevron-up"></i></a>
             <div id="myDIV">

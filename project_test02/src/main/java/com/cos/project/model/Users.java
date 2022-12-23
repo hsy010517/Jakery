@@ -1,19 +1,26 @@
 package com.cos.project.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -66,5 +73,17 @@ public class Users {
 	
 	@CreationTimestamp
 	private Timestamp createDate;
+	
+	@OneToMany(mappedBy="users", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"users"})
+	private List<RecommendLikes> recommend;
+	/*
+	 * @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade =
+	 * CascadeType.REMOVE) private List<RecommendLikes> postLikeList = new
+	 * ArrayList<>();
+	 * 
+	 * public void mappingPostLike(RecommendLikes postLike) {
+	 * this.postLikeList.add(postLike); }
+	 */
 	
 }

@@ -25,7 +25,8 @@
 
                   <a href="/board/${freeboard.freenum}/freeUpdateForm" class="freeboardbtn freeboardbtn-update"><i class="fa-solid fa-pencil"></i></a>
                   <button id="freeboardbtn-delete" class="freeboardbtn freeboardbtn-delete"><i class="fa-solid fa-trash"></i></button>
-
+					<button id="freeboardbtn-recommend" class="freeboardbtn freeboardbtn-recommend"><i class="fa-regular fa-heart"></i></button>
+<!-- 					<button id="freeboardbtn-recommend" class="freeboardbtn freeboardbtn-recommend"><i class="fa-solid fa-heart"></i></button> -->
                 </c:if>
               </sec:authorize>
               <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
@@ -59,8 +60,8 @@
               </span> 
           </li>
           <li class="boardcontent-title-item boardcontent-count info_group">
-            <span class="info_detail">LIKE : </span><span id="count" class="info_detail_content">
-               ${freeboard.count}
+            <span class="info_detail">LIKE : </span><span id="recommendcnt" class="info_detail_content">
+               ${freeboard.recommend}
               </span> 
           </li>
         </ul>
@@ -110,7 +111,7 @@
         <br>
         <div class="freereply-contents-div">
           <div class="freereply-contents-header">
-            <a href="javascript:doDisplay()">댓글 목록 (댓글수)
+            <a href="javascript:doDisplay()">댓글 목록 (${freeboard.freereplycnt})
             <i id="chevron-down" class="fa-sharp fa-solid fa-chevron-down"></i>
             <i id="chevron-up"  class="fa-sharp fa-solid fa-chevron-up"></i></a>
             <div id="myDIV">
@@ -136,4 +137,5 @@
 <script type="text/javascript" src="/js/freeDetailCss.js"></script>
 <script type="text/javascript" src="/js/freereply.js"></script>
 <script type="text/javascript" src="/js/freeboard.js"></script>
+<script type="text/javascript" src="/js/recommendcnt.js"></script>
 <%@ include file="../layout/footer.jsp" %>

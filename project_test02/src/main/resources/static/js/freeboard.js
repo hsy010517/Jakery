@@ -12,6 +12,10 @@ let index={
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.update();
 		});
+		$("#freeboardbtn-recommend").on("click",()=>{
+			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
+			this.recommend();
+		});
 		
 	},
 	save: function(){
@@ -68,5 +72,6 @@ let index={
 		});
 	},
 	
+			
 }
 index.init();

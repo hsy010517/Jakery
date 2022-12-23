@@ -17,7 +17,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Formula;
 
@@ -66,8 +65,12 @@ public class FreeBoards {
 	@JsonIgnoreProperties({"freeboards"})
 	private List<FreeReplys> freereply;
 	
-	@Column
-	private int recommend;
+	@OneToMany(mappedBy="freeboards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"freeboards"})
+	private List<RecommendLikes> recommend;
+	
+	@Formula("(SELECT count(1) FROM recommendliks rec WHERE rec.Freeboardsnum = freenum)")
+	private int recommendcnt;
 
 	@CreationTimestamp
 	private Timestamp freecreateDate;
