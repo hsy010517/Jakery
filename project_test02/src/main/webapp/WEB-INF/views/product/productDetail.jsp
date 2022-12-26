@@ -83,7 +83,7 @@
       </div>
 
       <div class="product-sub-title">
-        MORE DETAILS
+        <span style="color: #ffc730;">M</span>ORE <span style="color: #ffc730;">D</span>ETAILS
       </div>
       <div class="freeDetailContents product-sub-div">
         <div class="product-sub-head">

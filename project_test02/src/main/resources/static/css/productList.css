@@ -110,9 +110,26 @@ li {
   color: #ffc730;
 }
 
-.slide_item{
-  background-color: #eee;
+.item1{
+  background-color: #ebe6e2;
 }
+
+.item2{
+  background-image: url(../image/banner_pattern2.png);
+  background-repeat: repeat-x;
+}
+
+.item3{
+  background-color: #141414;
+}
+
+.slide-contents{
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
 .slide_item_duplicate {
   display: flex;
   align-items: center;

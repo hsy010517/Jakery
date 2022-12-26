@@ -1,0 +1,206 @@
+
+
+#adminpage-productList-container{
+  width: 100%;
+  min-width: 480px;
+  max-width: 1080px;
+  margin: 0 auto;
+  position:relative;
+  background-color: #fff;
+  background-size: 100%;
+  height: 100%;
+  border-top: #ffc730 5px solid;
+  border-bottom: #ffc730 5px solid;
+  }
+  
+  .adminpage-productList-wrapper{
+    width: 100%;
+    min-height: 780px;
+    height: 100%;
+    margin: auto;
+  }
+
+  .adminpage-productList-logo {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 50px auto 20px auto;
+    width: 300px;
+    text-align: center;
+    display: block;
+  }
+
+  .adminpage-productList-selecttitle {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 20px auto 20px auto;
+    width: 300px;
+    text-align: center;
+    display: block;
+  }
+
+  .adminpage-productList-table {
+    border-top: solid 1.5px #303030;
+    border-bottom: solid 1.5px #303030;
+    border-collapse: collapse;
+    width: 90%;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+  }
+
+  thead{
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .adminpage-productList-tbody {
+    text-align: center;
+    font-size: 12px;
+    height: 100%;
+    line-height: 1.5;
+  }
+  
+  .adminpage-productList-th {
+    padding: 10px 0px;
+    border-bottom: 1px solid lightgrey;
+    height: 10px;
+  }
+
+  .adminpage-productList-detail{
+    border-bottom: 1px solid lightgrey;
+  }
+  .adminpage-productList-td {
+    min-height: 120px;
+    height: 100%;
+  }
+
+  .adminpage-productList-btn {
+    background: #ffc730;
+    border: none;
+    color: #303030;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 400;
+    text-align: center;
+    margin: 5px auto;
+    width: 70px;
+    height: 30px;
+  }
+  .adminpage-productList-btn:hover{
+    background-color: #303030;
+    color: #ffc730;
+    }
+  .adminpage-productList-userdelete:hover{
+    background-color: rgb(199, 37, 37);
+    color: #fff;
+    }
+
+  .adminpage-productList-userdeleteall{
+    background: #303030;
+    border: none;
+    color: #ffc730;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 300;
+    text-align: center;
+    margin: 15px auto;
+    line-height: 1.5;
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  .adminpage-productList-userdeleteall:hover{
+    background-color: rgb(199, 37, 37);
+    color: #fff;
+    font-weight: 400;
+  }
+  .adminpage-productList-main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+  }
+  .adminpage-productList-img{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    margin: auto 0;
+    padding-right: 20px;
+  }
+
+  .adminpage-productList-desc{
+    font-size: 10px;
+    color: #777;
+  }
+
+  .adminpage-productList-head{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-bottom: 30px;
+  }
+
+  #adminselect{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 500;
+    color: #303030;
+    margin-right: 10px;
+    outline: none;
+
+  }
+
+  .search-admin-product{
+    outline: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 500;
+    color: #303030;
+    border: none;
+    border-bottom: 1px #777 solid;
+    padding: 5px;
+    width: 200px;
+  }
+
+  .search-box-admin>button{
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    background-color: #fff;
+  }
+
+  .adminpage-productList-newbtn-div{
+    display: flex;
+    justify-content: center;
+  }
+  .adminpage-productList-newbtn{
+    background: #ffc730;
+    border: none;
+    color: #303030;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+    width: 120px;
+    height: 40px;
+  }
+  .adminpage-productList-newbtn:hover{
+    background-color: #303030;
+    color: #ffc730;
+    }

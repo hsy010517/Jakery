@@ -3,18 +3,20 @@
     <%@ include file="../layout/header.jsp" %>
   <div id="productList-container">
     <div class="slide slide_wrap">
-      <div class="slide_item item1">
-        <img class="slide_title" src="">
-        <img class="slide_img" src="">
+      <div class="slide_item item1" >
+        <div class="slide-contents">
+        <img class="slide_title" src="image/banner_txt1.png">
+        <img class="slide_img" src="image/banner_img1.png">
+        </div>
       </div>
-      <div class="slide_item item2"> <img class="slide_title" src="">
-        <img class="slide_img" src="">
+      <div class="slide_item item2">
+        <img class="slide_img" src="image/banner_img2.png">
       </div>
-      <div class="slide_item item3"> <img class="slide_title" src="">
-        <img class="slide_img" src="">
+      <div class="slide_item item3"> <img class="slide_title" src="image/banner_txt3.png" style="height: 200px;">
+        <img class="slide_img" src="image/banner_img3.png" style="height: 250px;">
       </div>
-      <div class="slide_item item4"> <img class="slide_title" src="">
-        <img class="slide_img" src="">
+      <div class="slide_item item4"> <img class="slide_title" src="image/banner_txt4.png" style="height: 200px;">
+        <img class="slide_img" src="image/banner_img4.png" style="height: 300px;">
       </div>
       <div class="slide_prev_button slide_button">◀</div>
       <div class="slide_next_button slide_button">▶</div>
