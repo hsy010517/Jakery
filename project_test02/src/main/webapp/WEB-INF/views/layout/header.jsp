@@ -107,16 +107,30 @@
             </c:when>
 
             <c:otherwise>
+                <sec:authorize access="hasRole('ROLE_USER')">
                <ul class="navbar-nav">
                   <li class="user-item nav-item"><a class="nav-link"
                      href="/logout">Logout</a></li>
-                  <li class="user-item nav-item"><a class="nav-link" href="/mypage">Mypage</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href="/mypage">MyPage</a></li>
                   <li class="user-item nav-item"><a class="nav-link" href=""><span
                         class="reading-glasses"> <span
                            class="reading-glasses__circle"></span> <span
                            class="reading-glasses__line"></span>
                      </span></a></li>
                </ul>
+               </sec:authorize>
+                               <sec:authorize access="hasRole('ROLE_ADMIN')">
+               <ul class="navbar-nav">
+                  <li class="user-item nav-item"><a class="nav-link"
+                     href="/logout">Logout</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href="/adminpage">AdminPage</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href=""><span
+                        class="reading-glasses"> <span
+                           class="reading-glasses__circle"></span> <span
+                           class="reading-glasses__line"></span>
+                     </span></a></li>
+               </ul>
+               </sec:authorize>
             </c:otherwise>
          </c:choose>
       </div>
