@@ -45,7 +45,7 @@
                             <div><input type="checkbox" name="adminpage-productList-product1"></div>
                           </td>
                           <td class="adminpage-productList-main adminpage-productList-td">
-                            <img class="adminpage-productList-img" src="">
+                            <img class="adminpage-productList-img" src="/image/productlist.png">
                             <div class="adminpage-productList-title">
                               <span class="adminpage-productList-sub">1줄 설명</span>
                               <p class="adminpage-productList-name"><b>상품명상품명</b></p>

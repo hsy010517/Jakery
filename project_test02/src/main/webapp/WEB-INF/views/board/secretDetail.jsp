@@ -27,10 +27,9 @@
                   <button id="secretboardbtn-delete" class="secretboardbtn secretboardbtn-delete"><i class="fa-solid fa-trash"></i></button>
                 </c:if>
               </sec:authorize>
-              <!-- <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-                <button id="secretboardbtn-delete" class="secretboardbtn secretboardbtn-update" value="${secretboard.users.num}">delete
-                </button>
-              </sec:authorize> -->
+              <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+ <button id="secretboardbtn-delete" class="secretboardbtn secretboardbtn-delete"><i class="fa-solid fa-trash"></i></button>
+              </sec:authorize>
             </div>
           </li>
         </ul>

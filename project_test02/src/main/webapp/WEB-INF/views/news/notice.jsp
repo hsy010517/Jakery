@@ -14,7 +14,7 @@
       <div class="freeboardform-btndiv">
        
           	<sec:authorize access="hasRole('ROLE_ADMIN')">
-            <button class="freeboard-link-btn" onclick="">글쓰기</button>
+            <button class="freeboard-link-btn" onclick="location.href='/notice/saveForm';">글쓰기</button>
             </sec:authorize>
        
       </div>
@@ -25,16 +25,16 @@
       </div>
       <div class="board-list-title">LIST</div>
       <div class="board-div">
-        <c:forEach var="freeboard" items="${freeboards.content}">
+        <c:forEach var="notice" items="${notices.content}">
         <div>
-          <ul class="board-list">
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-num">num</a>
+          <ul class="board-list" onclick="location.href='/notice/${notice.noticenum}'" style="cursor:pointer;">
+            <li class="board-item"><a href="/notice/${notice.noticenum}" class="board-num">${notice.noticenum}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-title">10개 이후로는 넘어가도록 설정</a>
+            <li class="board-item"><a href="/notice/${notice.noticenum}" class="board-title">${notice.noticetitle}</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-id">관리자</a>
+            <li class="board-item"><a href="/notice/${notice.noticenum}" class="board-id">관리자</a>
             </li>
-            <li class="board-item"><a href="/auth/board/${freeboard.num}" class="board-count">Notice</a>
+            <li class="board-item"><a href="/notice/${notice.noticenum}" class="board-count">Notice</a>
             </li>
           </ul>
         </div>
@@ -42,22 +42,22 @@
       </div>
       <ul class="pagination justify-content-center">
         <c:choose>
-          <c:when test="${freeboards.first}">
-            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${freeboards.number-1}">&laquo;</a></li>
+          <c:when test="${notices.first}">
+            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${notices.number-1}">&laquo;</a></li>
           </c:when>
           <c:otherwise>
-            <li class="page-item"><a class="page-link" href="?page=${freeboards.number-1}">&laquo;</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${notices.number-1}">&laquo;</a></li>
           </c:otherwise>
         </c:choose>
         <li class="pagingbtn"><a class="page-link" href="?page=1">1</a></li>
         <li class="pagingbtn"><a class="page-link" href="?page=2">2</a></li>
         <li class="pagingbtn"><a class="page-link" href="?page=3">3</a></li>
         <c:choose>
-          <c:when test="${freeboards.last}">
-            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${freeboards.number+1}">&raquo;</a></li>
+          <c:when test="${notices.last}">
+            <li class="pagingbtn pagingbtn-disabled"><a class="page-link" href="?page=${notices.number+1}">&raquo;</a></li>
           </c:when>
           <c:otherwise>
-            <li class="page-item"><a class="page-link" href="?page=${freeboards.number+1}">&raquo;</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${notices.number+1}">&raquo;</a></li>
           </c:otherwise>
         </c:choose>
 

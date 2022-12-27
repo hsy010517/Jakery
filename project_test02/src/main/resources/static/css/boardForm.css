@@ -4,6 +4,8 @@
   min-height: 800px;
   position:relative;
   margin: 0 auto;
+  box-sizing: border-box ;
+
 }
 .writing-wrapper{
   width: 80%;
@@ -19,8 +21,12 @@
   margin-top: 50px;
   margin-bottom: 20px;
   width: 100%;
-  
 }
+
+.freetitle>input{
+	padding:0;
+}
+
 
 .freetitle:focus, .freecontent:focus{
   outline: none;

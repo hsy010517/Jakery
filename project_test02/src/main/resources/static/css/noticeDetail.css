@@ -75,7 +75,7 @@
 
 .notice-info{
   display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr 5fr 2fr;
   font-family: 'Noto Sans KR', sans-serif;
   font-size:14px;
   font-weight: 300;

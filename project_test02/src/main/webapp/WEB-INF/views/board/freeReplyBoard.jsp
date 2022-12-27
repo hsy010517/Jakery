@@ -31,7 +31,10 @@
                  	<button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${freereplyboard.freereplynum})">삭제 x</button>
                   </c:if>
                   <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+                      <c:if test="${freereplyboard.users.username!=principal.user.username}">
+
 						 <button id="freeboardreplybtn-delete" type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${freereplyboard.freereplynum})">삭제 x</button>
+					</c:if>
 					</sec:authorize>
                   </div> 
             </div>

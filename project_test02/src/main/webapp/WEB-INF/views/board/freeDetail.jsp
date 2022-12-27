@@ -29,8 +29,8 @@
                 </c:if>
               </sec:authorize>
               <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-                <button id="freeboardbtn-delete" class="freeboardbtn freeboardbtn-update" value="${freeboard.users.freenum}">delete
-                </button>
+                  <a href="/board/${freeboard.freenum}/freeUpdateForm" class="freeboardbtn freeboardbtn-update"><i class="fa-solid fa-pencil"></i></a>
+                <button id="freeboardbtn-delete" class="freeboardbtn freeboardbtn-delete"><i class="fa-solid fa-trash"></i></button>
               </sec:authorize>
             </div>
           </li>

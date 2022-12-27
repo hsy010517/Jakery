@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
@@ -5,25 +6,24 @@
 <div id="writing-container">
 	<div class="wrapper writing-wrapper">
 		<div class="product-sub-title">
-			<span style="color: #ffc730;">1</span>:1 <span
-				style="color: #ffc730;">B</span>OARD
+			<span style="color: #ffc730;">N</span>OTICE
 		</div>
 		<form>
 			<div class="freetitle">
-				<input id="secrettitle" type="text" class="form-control"
+				<input id="noticetitle" type="text" class="form-control"
 					placeholder="  제목을 입력하세요.">
 			</div>
 			<div class="freecontent">
-				<textarea id="secretcontent" class="form-control summernote"
+				<textarea id="noticecontent" class="form-control summernote"
 					placeholder="작성할 내용을 입력하세요." rows="20"></textarea>
 			</div>
 		</form>
-		<button id="secretboardbtn-save" class="freeboardbtn-save">저장하기</button>
+		<button id="noticebtn-save" class="freeboardbtn-save">저장하기</button>
 	</div>
 </div>
 
 <script>
-    $('#secretcontent').summernote({
+    $('#noticecontent').summernote({
     	height:400,
     	toolbar: [
 		    // 글꼴 설정
@@ -49,8 +49,5 @@
 		 // 추가한 폰트사이즈
 		fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']});
 </script>
-
-
-  <script type="text/javascript" src="/js/secretboard.js"></script>
-   <%@ include file="../layout/footer.jsp"%>
-
+  <script type="text/javascript" src="/js/notice.js"></script>
+<%@ include file="../layout/footer.jsp"%>

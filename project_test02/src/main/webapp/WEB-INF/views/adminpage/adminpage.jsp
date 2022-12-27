@@ -29,7 +29,7 @@
                 <td>｜ 12건</td>
               </tr>
             </table>
-            <button class="adminpage-sub-profile-item adminpage-sub-profile-btn" type="button">LOGOUT</button>
+            <a href="/logout"><button class="adminpage-sub-profile-item adminpage-sub-profile-btn" type="button">LOGOUT</button></a>
           </div>
           <ul>
             <li class="adminpage-sub-li" id="chk"><a href="#">관리자 정보</a></li>
