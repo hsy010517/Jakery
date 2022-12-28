@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 		, initialValue = 1
 		, allocationSize = 1
 		)
-public class RecommendLikes {
+public class Recommends {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FREEBOARD_RECOMMENDLIKE_SEQ_GENERATOR") 
 	private int recommendid;
@@ -36,8 +36,8 @@ public class RecommendLikes {
 	private Users users;
 	 
 	@ManyToOne(fetch = FetchType.EAGER)  
-	@JoinColumn(name = "freenum", foreignKey = @ForeignKey(name = "fk_RecommendLike_Freeboards")) 
-	private FreeBoards freeboards;
+	@JoinColumn(name = "recommendfreenum", foreignKey = @ForeignKey(name = "fk_RecommendLike_Freeboards")) 
+	private FreeBoards recommendfreeboards;
   
 
 }

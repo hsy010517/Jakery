@@ -76,7 +76,7 @@ public class Users {
 	
 	@OneToMany(mappedBy="users", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({"users"})
-	private List<RecommendLikes> recommend;
+	private List<Recommends> recommend;
 	/*
 	 * @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade =
 	 * CascadeType.REMOVE) private List<RecommendLikes> postLikeList = new

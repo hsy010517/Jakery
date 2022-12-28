@@ -13,13 +13,13 @@ let recommend={
 		};
 		$.ajax({ 
 			type:"POST",
-			url:"/api/post/"+freenum+"/like",
+			url:"/auth/freeboard/"+freenum+"/like",
 			data:JSON.stringify(data), 
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
 		}).done(function(resp){
 			alert("추천클릭이 완료되었습니다.");
-			location.href="recommend/"+freenum;
+			location.href="/auth/freeboard/"+freenum;
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});

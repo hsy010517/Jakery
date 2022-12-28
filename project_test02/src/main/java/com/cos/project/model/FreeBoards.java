@@ -65,9 +65,9 @@ public class FreeBoards {
 	@JsonIgnoreProperties({"freeboards"})
 	private List<FreeReplys> freereply;
 	
-	@OneToMany(mappedBy="freeboards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"freeboards"})
-	private List<RecommendLikes> recommend;
+	@OneToMany(mappedBy="recommendfreeboards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({"recommendfreeboards"})
+	private List<Recommends> recommend;
 	
 	@Formula("(SELECT count(1) FROM recommendliks rec WHERE rec.Freeboardsnum = freenum)")
 	private int recommendcnt;
