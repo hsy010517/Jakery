@@ -31,7 +31,7 @@
       <div class="board-list-title">LIST</div>
         <c:forEach var="freeboard" items="${freeboards.content}">
           <div class="board-div">
-            <ul class="board-list">
+            <ul class="board-list" onclick="location.href='/auth/freeboard/${freeboard.freenum}'" style="cursor:pointer;">
             <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-num">${freeboard.freenum}</a>
             </li>
             <li class="board-item"><a href="/auth/freeboard/${freeboard.freenum}" class="board-title">${freeboard.freetitle}<span style="font-weight:300; color:#ffc730;"> (${freeboard.freereplycnt})</span></a>

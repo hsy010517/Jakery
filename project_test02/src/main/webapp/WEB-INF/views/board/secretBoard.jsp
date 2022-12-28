@@ -34,7 +34,7 @@
         <c:forEach var="secretboard" items="${secretboards.content}">
                 <div class="board-div">     
                 <c:if test="${secretboard.users.username == principal.user.username}">
-          <ul class="board-list">  
+          <ul class="board-list" onclick="location.href='/secretboard/${secretboard.secretnum}'" style="cursor:pointer;">  
             <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
             </li>
             <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-title">${secretboard.secrettitle} (${secretboard.secretreplycnt}) </a>
@@ -61,7 +61,7 @@
            <!-- 어드민이 쓸 수 있게 -->
           <sec:authorize access="hasRole('ROLE_ADMIN')">
           <c:if test="${secretboard.users.username != principal.user.username}">
-           	<ul class="board-list">  
+           	<ul class="board-list" onclick="location.href='/secretboard/${secretboard.secretnum}'" style="cursor:pointer;">  
 	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
 	            </li>
 	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="board-title">${secretboard.secrettitle} (${secretboard.secretreplycnt}) </a>

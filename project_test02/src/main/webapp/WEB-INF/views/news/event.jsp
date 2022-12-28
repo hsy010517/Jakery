@@ -12,8 +12,8 @@
             <rect y="8" width="25" height="3"></rect>
             <rect y="16" width="25" height="3"></rect>
           </svg>
-          <a href="" class="event-content-title-a dummy">EVENT</a>
-            <div onclick="history.back()" class="close close1"></div>
+          <a href="/auth/event" class="event-content-title-a dummy">EVENT</a>
+            <div onclick="location.href='/'" class="close close1"></div>
         </div>
         <ul class="event-content-item event-content-title">
           <li class="boardcontent-title-item event-content-item">

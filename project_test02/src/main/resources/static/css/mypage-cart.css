@@ -54,7 +54,6 @@
   .cart__list {
   border-top: solid 1.5px #303030;
   border-bottom: solid 1.5px #303030;
-
   border-collapse: collapse;
   width: 100%;
   font-size: 14px;
@@ -101,7 +100,6 @@ thead{
   position: absolute;
   top: 0;
   font-size: 10px;
-
 }
 
 .cart_count_item>button.minus {

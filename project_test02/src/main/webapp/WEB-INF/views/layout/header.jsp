@@ -38,6 +38,11 @@
 <link rel="stylesheet" type="text/css" href="/css/reply.css">
 <link rel="stylesheet" type="text/css" href="/css/search.css">
 <link rel="stylesheet" type="text/css" href="/css/reviewForm.css">
+<link rel="stylesheet" type="text/css" href="/css/adminpage.css">
+<link rel="stylesheet" type="text/css" href="/css/adminpage-buyList.css">
+<link rel="stylesheet" type="text/css" href="/css/adminpage-memberList.css">
+<link rel="stylesheet" type="text/css" href="/css/adminpage-memberForm.css">
+<link rel="stylesheet" type="text/css" href="/css/adminpage-productList.css">
 <!-- font awesome -->
   <script src="https://kit.fontawesome.com/a067aa947d.js" crossorigin="anonymous"></script>
 <!-- boot strap -->
@@ -56,6 +61,8 @@
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 <sec:authorize access="isAuthenticated()">
    <sec:authentication property="principal" var="principal" />
@@ -73,7 +80,7 @@
                   style="color: #ffc730;">J</span><span style="color: #303030;">akery</span></a></li>
             <li class="menu-item nav-item"><a class="nav-link" href="">News</a>
                <ol class="sub_menu_list">
-                  <li class="sub-item"><a href="/auth/notice">Notice</a></li>
+                  <li class="sub-item"><a href="/notice">Notice</a></li>
                   <li class="sub-item"><a href="/auth/event">Event</a></li>
                </ol></li>
             <li class="menu-item nav-item"><a class="nav-link" href="">Menu</a>
@@ -107,16 +114,30 @@
             </c:when>
 
             <c:otherwise>
+                <sec:authorize access="hasRole('ROLE_USER')">
                <ul class="navbar-nav">
                   <li class="user-item nav-item"><a class="nav-link"
                      href="/logout">Logout</a></li>
-                  <li class="user-item nav-item"><a class="nav-link" href="/mypage">Mypage</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href="/mypage">MyPage</a></li>
                   <li class="user-item nav-item"><a class="nav-link" href=""><span
                         class="reading-glasses"> <span
                            class="reading-glasses__circle"></span> <span
                            class="reading-glasses__line"></span>
                      </span></a></li>
                </ul>
+               </sec:authorize>
+                               <sec:authorize access="hasRole('ROLE_ADMIN')">
+               <ul class="navbar-nav">
+                  <li class="user-item nav-item"><a class="nav-link"
+                     href="/logout">Logout</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href="/adminpage">AdminPage</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href=""><span
+                        class="reading-glasses"> <span
+                           class="reading-glasses__circle"></span> <span
+                           class="reading-glasses__line"></span>
+                     </span></a></li>
+               </ul>
+               </sec:authorize>
             </c:otherwise>
          </c:choose>
       </div>

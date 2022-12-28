@@ -1,0 +1,146 @@
+
+
+#adminpage-buyList-container{
+  width: 100%;
+  min-width: 480px;
+  max-width: 1080px;
+  margin: 0 auto;
+  position:relative;
+  background-color: #fff;
+  background-size: 100%;
+  height: 100%;
+  border-top: #ffc730 5px solid;
+  border-bottom: #ffc730 5px solid;
+  }
+  
+  .adminpage-buyList-wrapper{
+    width: 100%;
+    min-height: 780px;
+    height: 100%;
+    margin: auto;
+  }
+
+  .adminpage-buyList-logo {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 50px auto 20px auto;
+    width: 300px;
+    text-align: center;
+    display: block;
+  }
+
+  .adminpage-buyList-head{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-bottom: 30px;
+  }
+
+  .search-admin-buy{
+    outline: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 500;
+    color: #303030;
+    border: none;
+    border-bottom: 1px #777 solid;
+    padding: 5px;
+    width: 300px;
+  }
+  .search-box-admin>button{
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    background-color: #fff;
+  }
+
+
+  .adminpage-buyList-table {
+    border-top: solid 1.5px #303030;
+    border-bottom: solid 1.5px #303030;
+    border-collapse: collapse;
+    width: 90%;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+  thead{
+    text-align: center;
+    font-weight: bold;
+  }
+  .adminpage-buyList-thead{
+    border-bottom: 1px solid lightgrey;
+
+  }
+  .adminpage-buyList-tbody {
+    text-align: center;
+    font-size: 12px;
+    height: 100%;
+    line-height: 1.5;
+  }
+  
+  .adminpage-buyList-th {
+    padding: 10px 0px;
+    height: 10px;
+  }
+
+  .adminpage-buyList-detail{
+    border-bottom: 1px solid lightgrey;
+  }
+  .adminpage-buyList-td {
+    min-height: 10px;
+    height: 100%;
+  }
+
+  .adminpage-buyList-btn {
+    background: #ffc730;
+    border: none;
+    color: #303030;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 400;
+    text-align: center;
+    margin: 5px auto;
+    width: 70px;
+    height: 30px;
+  }
+  .adminpage-buyList-btn:hover{
+    background-color: #303030;
+    color: #ffc730;
+    }
+  .adminpage-buyList-delete:hover{
+    background-color: rgb(199, 37, 37);
+    color: #fff;
+    }
+
+  .adminpage-buyList-deleteall{
+    background: #303030;
+    border: none;
+    color: #ffc730;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    font-weight: 300;
+    text-align: center;
+    margin: 15px auto;
+    line-height: 1.5;
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+  }
+
+  .adminpage-buyList-deleteall:hover{
+    background-color: rgb(199, 37, 37);
+    color: #fff;
+    font-weight: 400;
+  }
