@@ -51,7 +51,7 @@
 							<c:forEach var="product" items="${products}">
 								<c:if test="${product.categories eq 'BREAD'}">
 
-									<tr class="adminpage-productList-detail">
+									<tr class="adminpage-productList-detail" onclick="location.href='/auth/product/${product.pronum}'">
 										<td class="adminpage-productList-td">
 											<div>
 												<input type="checkbox" name="adminpage-productList-product1">
@@ -77,7 +77,9 @@
 											<p class="adminpage-productList-pay">${product.proamount}개</p>
 											<br>
 										</td>
-										<td class="adminpage-productList-td">
+										<td class="adminpage-productList-td"><input type="hidden"
+											value="${product.pronum}" class="pronum">
+
 											<button
 												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
 											<button
@@ -120,7 +122,7 @@
 							<c:forEach var="product" items="${products}">
 								<c:if test="${product.categories eq 'DESSERT'}">
 
-									<tr class="adminpage-productList-detail">
+									<tr class="adminpage-productList-detail" onclick="location.href='/auth/product/${product.pronum}'">
 										<td class="adminpage-productList-td">
 											<div>
 												<input type="checkbox" name="adminpage-productList-product1">
@@ -147,6 +149,8 @@
 											<br>
 										</td>
 										<td class="adminpage-productList-td">
+										<input type="hidden"
+											value="${product.pronum}" class="pronum">
 											<button
 												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
 											<button
@@ -176,7 +180,7 @@
 				<table class="adminpage-productList-table">
 					<form>
 						<thead class="adminpage-productList-thead">
-							<tr class="adminpage-productList-thead_tr">
+							<tr class="adminpage-productList-thead_tr" onclick="location.href='/auth/product/${product.pronum}'">
 								<th style="width: 5%;" class="adminpage-memberList-th dummy"><input
 									type="checkbox" onclick='selectAllproduct3(this)'></th>
 								<th style="width: 40%;" class="adminpage-productList-th dummy">상품</th>
@@ -186,7 +190,7 @@
 							</tr>
 						</thead>
 						<tbody class="adminpage-productList-tbody">
-<c:forEach var="product" items="${products}">
+							<c:forEach var="product" items="${products}">
 								<c:if test="${product.categories eq 'BAKING'}">
 
 									<tr class="adminpage-productList-detail">
@@ -216,6 +220,8 @@
 											<br>
 										</td>
 										<td class="adminpage-productList-td">
+										<input type="hidden"
+											value="${product.pronum}" class="pronum">
 											<button
 												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
 											<button

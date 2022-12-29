@@ -74,5 +74,18 @@ let index = {
 			alert(JSON.stringify(error));
 		});
 	},
+	deleteByPronum: function() {
+		var pronum = $(".pronum").val();
+		$.ajax({
+			type: "DELETE",
+			url: "/api/product/" + pronum,
+			dataType: "json"
+		}).done(function(resp) {
+			alert("공지가 삭제되었습니다.");
+			location.href = "/notice";
+		}).fail(function(error) {
+			alert(JSON.stringify(error));
+		});
+	},
 }
 index.init();
