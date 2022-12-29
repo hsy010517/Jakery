@@ -91,9 +91,9 @@
                </ol></li>
             <li class="menu-item nav-item"><a class="nav-link" href="/auth/product">Menu</a>
                <ol class="sub_menu_list">
-                  <li class="sub-item"><a href="">Bread</a></li>
-                  <li class="sub-item"><a href="">Desert</a></li>
-                  <li class="sub-item"><a href="">Baking tools</a></li>
+                  <li class="sub-item category-bread"><a href="/auth/product" >Bread</a></li>
+                  <li class="sub-item category-dessert"><a href="/auth/product">Desert</a></li>
+                  <li class="sub-item category-baking"><a href="/auth/product">Baking tools</a></li>
                </ol></li>
             <li class="menu-item nav-item"><a class="nav-link" href="">Board</a>
                <ol class="sub_menu_list">

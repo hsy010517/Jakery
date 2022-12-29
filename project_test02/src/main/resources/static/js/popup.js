@@ -6,15 +6,20 @@ function setCookie(name, value, expiredays) {
 }
 function closePop() {
 	if (document.pop_form.pop_check.checked) {
+		console.log('닫기 check')
 		setCookie("maindiv", "done", 1);
 	}
-	document.all['layer_popup'].style.visibility = "hidden";
+	$('.layerPopup').hide();
+	console.log('닫기')
 }
+
 
 cookiedata = document.cookie;
 if (cookiedata.indexOf("maindiv=done") < 0) {
-	document.all['layer_popup'].style.visibility = "visible";
+	$('.layerPopup').show();
 }
 else {
-	document.all['layer_popup'].style.visibility = "hidden";
+	console.log("aaa");
+	$('.layerPopup').hide();
+	console.log("하루지났음");
 }

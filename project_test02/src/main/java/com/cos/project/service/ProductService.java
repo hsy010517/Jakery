@@ -24,6 +24,13 @@ public class ProductService {
 	public List<Products> 상품목록() {
 		return productRepository.findAll();
 	}
+	
+//	@Transactional(readOnly = true)
+//	public Products 카테고리별목록(Products categories) {
+//		return productRepository.findByCategories(categories).orElseThrow(() -> {
+//			return new IllegalArgumentException("카테고리를 찾을 수 없습니다.");
+//		});
+//	}
 
 	@Transactional(readOnly = true)
 

@@ -8,5 +8,7 @@ import com.cos.project.model.Products;
 
 public interface ProductRepository extends JpaRepository<Products,Integer>{
 	Optional<Products> findByPronum(int pronum);
-
+	Optional<Products> findByCategories(Products categories);
 }
+
+

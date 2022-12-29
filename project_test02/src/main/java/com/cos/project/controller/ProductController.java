@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.cos.project.model.Products;
 import com.cos.project.service.ProductService;
 
 @Controller
@@ -19,6 +20,13 @@ public class ProductController {
 		model.addAttribute("products",productService.상품목록());
 		return "product/productList";
 	}
+	
+//	@GetMapping("/auth/product/{categories}")
+//	public String productList(@PathVariable Products categories,Model model) {
+//		model.addAttribute("product",productService.카테고리별목록(categories));
+//		return "product/productList";
+//	}
+	
 	
 	@GetMapping("/product/saveForm")
 	public String saveForm() {
