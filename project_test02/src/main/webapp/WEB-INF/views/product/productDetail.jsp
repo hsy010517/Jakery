@@ -25,12 +25,10 @@
 
       <div class="freeDetailContents product-main-div">
         <div class="product-main-item product-main-img"
-          style="background: url('image/product.png') no-repeat center center;">상품사진</div>
+          style="background: url('/image?filename=${product.main_imgName}') no-repeat center center;">상품사진</div>
         <div class="product-main-item  product-main-title">
-          <h3 class="freeDetailTitle freeDescription-item">상품명</h3>
-          <div class="freeDetailDesc freeDescription-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Atque
-            error voluptates, officia assumenda quae tempore ea quidem ab officiis. Nihil modi illo maiores.</div>
+          <h3 class="freeDetailTitle freeDescription-item">${product.proname}</h3>
+          <div class="freeDetailDesc freeDescription-item">${product.prodesc2}</div>
           <div class="freeDetailReviewCount freeDescription-item">
             <a href="리뷰칸으로 이동">리뷰수</a>
             <span>명이 해당 상품에 후기를 남겼어요!</span>
@@ -39,15 +37,15 @@
         <table class="product-main-table product-main-item">
           <tr>
             <th>유통기한</th>
-            <td>기한을 입력해주세요</td>
+            <td>${product.prodate}</td>
           </tr>
           <tr>
             <th>보관방법</th>
-            <td>보관방법을 입력해주세요</td>
+            <td>${product.prosave}</td>
           </tr>
           <tr>
             <th>가격</th>
-            <td><small>개당 </small> [가격]</td>
+            <td><small>개당 </small> ${product.proprice}<small>원 </small> </td>
           </tr>
           <tr>
             <th>배송비</th>
@@ -55,13 +53,13 @@
           </tr>
           <tr>
             <th>적립금</th>
-            <td><b style="color: #ffc730;">20</b><b>P</b></td>
+            <td><b style="color: #ffc730;"> ${product.proprice*0.02}</b><b>P</b></td>
           </tr>
         </table>
         <div class="product-main-item product-main-count">
           <div class="total_name">
-            <div class="product_count_item total_name_title">상품명 : [상품명]</div>
-            <span class="product_count_item total_name_price">가격 : [가격]</span>
+            <div class="product_count_item total_name_title">상품명 : [${product.proname}]</div>
+            <span class="product_count_item total_name_price">가격 : [${product.proprice}]</span>
           </div>
           <form class="total_count" name="product_count" action="">
             <div class="count-wrap _count product_count_item">
@@ -73,7 +71,7 @@
           </form>
           <div class="total_price">
             <span class="product_price_item" style="color: #ffc730;">총 상품금액&nbsp </span>
-            <span class="product_price_item">가격*수량 원</span>
+            <span class="product_price_item">${product.proprice}*수량 원</span>
           </div>
         </div>
         <div class="product-main-item product-main-btn">
@@ -97,19 +95,19 @@
           <div class="product-sub-active product-sub-content">
             <!--subpage info-->
             <div class="product-sub-contentdetail">
-              <img src="image/productDetail_crossiant.png" alt="크로와상" style="width: 100%;">
+              <img src="/image?filename=${product.info_imgName}" alt="크로와상" style="width: 100%;">
             </div>
           </div>
           <!--subpage 상세 정보-->
             <div class="product-sub-active product-sub-content">
               <div class="product-sub-contentdetail">
-                상세정보
+                ${product.procontent}
               </div>
             </div>
           <!--subpage reviews-->
             <div class="product-sub-active product-sub-content">
               <div class="product-sub-contentdetail">
-				<%@ include file="/review.jsp" %>
+				<%@ include file="review.jsp" %>
               </div>
             </div>
 

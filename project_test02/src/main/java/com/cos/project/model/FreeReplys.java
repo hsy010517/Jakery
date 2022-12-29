@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @SequenceGenerator(
 		name="FREEBOARD_REPLY_SEQ_GENERATOR"
-		, sequenceName = "REVI_SEQ"
+		, sequenceName = "FREEBOARD_SEQ"
 		, initialValue = 1
 		, allocationSize = 1
 		)

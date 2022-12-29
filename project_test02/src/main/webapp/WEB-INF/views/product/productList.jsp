@@ -5,18 +5,18 @@
     <div class="slide slide_wrap">
       <div class="slide_item item1" >
         <div class="slide-contents">
-        <img class="slide_title" src="image/banner_txt1.png">
-        <img class="slide_img" src="image/banner_img1.png">
+        <img class="slide_title" src="/image/banner_txt1.png">
+        <img class="slide_img" src="/image/banner_img1.png">
         </div>
       </div>
       <div class="slide_item item2">
-        <img class="slide_img" src="image/banner_img2.png">
+        <img class="slide_img" src="/image/banner_img2.png">
       </div>
-      <div class="slide_item item3"> <img class="slide_title" src="image/banner_txt3.png" style="height: 200px;">
-        <img class="slide_img" src="image/banner_img3.png" style="height: 250px;">
+      <div class="slide_item item3"> <img class="slide_title" src="/image/banner_txt3.png" style="height: 200px;">
+        <img class="slide_img" src="/image/banner_img3.png" style="height: 250px;">
       </div>
-      <div class="slide_item item4"> <img class="slide_title" src="image/banner_txt4.png" style="height: 200px;">
-        <img class="slide_img" src="image/banner_img4.png" style="height: 300px;">
+      <div class="slide_item item4"> <img class="slide_title" src="/image/banner_txt4.png" style="height: 200px;">
+        <img class="slide_img" src="/image/banner_img4.png" style="height: 300px;">
       </div>
       <div class="slide_prev_button slide_button">◀</div>
       <div class="slide_next_button slide_button">▶</div>
@@ -50,62 +50,17 @@
     </div>
     <div class="wrapper productList-wrapper">
       <div class="productList-main-div">
-        <div class="productList-bundle">
-          <div class="productList-image" style="background: url('image/productlist.png') no-repeat center center;">
+       <c:forEach var="product" items="${products}">
+        <div class="productList-bundle" onclick="location.href='/auth/product/${product.pronum}'">
+          <div class="productList-image" style="background: url('/image?filename=${product.list_imgName}') no-repeat center center;">
           </div>
           <div class="productList-content-div">
-            <span class="productList-content productList-title">제품명</span>
-            <div class="productList-content productList-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam laborum assumenda fugiat molestias mollitia delectus molestiae. Laborum hic eum deleniti.</div>
-            <span class="productList-content productList-price">₩ 9,900원</span>
+            <span class="productList-content productList-title">${product.proname}</span>
+            <div class="productList-content productList-desc">${product.prodesc2}</div>
+            <span class="productList-content productList-price">₩ ${product.proprice}원</span>
           </div>
         </div>
-
-        <!--더미/추후 반복문으로 들어가며 삭제 예정-->
-        <div class="productList-bundle">
-          <div class="productList-image" style="background: url('image/productlist.png') no-repeat center center;">
-          </div>
-          <div class="productList-content-div">
-            <span class="productList-content productList-title">제품명</span>
-            <div class="productList-content productList-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam laborum assumenda fugiat molestias mollitia delectus molestiae. Laborum hic eum deleniti.</div>
-            <span class="productList-content productList-price">₩ 9,900원</span>
-          </div>
-        </div>
-
-        <div class="productList-bundle">
-          <div class="productList-image" style="background: url('image/productlist.png') no-repeat center center;">
-          </div>
-          <div class="productList-content-div">
-            <span class="productList-content productList-title">제품명</span>
-            <div class="productList-content productList-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam laborum assumenda fugiat molestias mollitia delectus molestiae. Laborum hic eum deleniti.</div>
-            <span class="productList-content productList-price">₩ 9,900원</span>
-          </div>
-        </div>
-
-        <div class="productList-bundle">
-          <div class="productList-image" style="background: url('image/productlist.png') no-repeat center center;">
-          </div>
-          <div class="productList-content-div">
-            <span class="productList-content productList-title">제품명</span>
-            <div class="productList-content productList-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam laborum assumenda fugiat molestias mollitia delectus molestiae. Laborum hic eum deleniti.</div>
-            <span class="productList-content productList-price">₩ 9,900원</span>
-          </div>
-        </div>
-
-        <div class="productList-bundle">
-          <div class="productList-image" style="background: url('image/productlist.png') no-repeat center center;">
-          </div>
-          <div class="productList-content-div">
-            <span class="productList-content productList-title">제품명</span>
-            <div class="productList-content productList-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam laborum assumenda fugiat molestias mollitia delectus molestiae. Laborum hic eum deleniti.</div>
-            <span class="productList-content productList-price">₩ 9,900원</span>
-          </div>
-        </div>
-        <!--더미/추후 반복문으로 들어가며 삭제 예정-->
+</c:forEach>
       </div>
     </div>
     </div>

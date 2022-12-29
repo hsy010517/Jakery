@@ -25,7 +25,7 @@ public class UserService {
 		String rawPassword=user.getPassword(); //원본
 		String encPassword=encodeer.encode(rawPassword); //암호화
 		user.setPassword(encPassword);
-		user.setRoles(RoleType.USER);
+		user.setRoles(RoleType.ADMIN);
 		userRepository.save(user); // 하나의 트랙잭션
 	}
 	

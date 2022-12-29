@@ -20,7 +20,7 @@
               </div>
               <hr>
               <div class="adminpage-productList-newbtn-div">
-                <button class="adminpage-productList-newbtn">상품 추가하기</button>
+                <button class="adminpage-productList-newbtn" onclick="location.href='/product/saveForm'">상품 추가하기</button>
               </div>
           
               <div class="adminpage-productList-body">
