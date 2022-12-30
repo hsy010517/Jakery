@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
       <link rel="stylesheet" type="text/css" href="/css/mypage-memberForm.css">
+
 <div id="mypage-register-container">
   <div class="mypage-register-wrapper">
     <a class="mypage-register-logo" href="/"><span style="color: #ffc730;">M</span><span

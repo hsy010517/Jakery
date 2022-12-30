@@ -21,6 +21,13 @@ public class ProductController {
 		return "product/productList";
 	}
 	
+	@GetMapping("/product/{pronum}/updateForm")
+	public String updateForm(@PathVariable int pronum,Model model) {
+		System.out.println("호출");
+		model.addAttribute("product",productService.상품상세보기(pronum));
+		return "product/productUpdateForm";
+	}
+	
 //	@GetMapping("/auth/product/{categories}")
 //	public String productList(@PathVariable Products categories,Model model) {
 //		model.addAttribute("product",productService.카테고리별목록(categories));
@@ -39,4 +46,5 @@ public class ProductController {
 		return "product/productDetail";
 	}
 	
+
 }

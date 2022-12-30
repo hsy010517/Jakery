@@ -51,14 +51,14 @@
 							<c:forEach var="product" items="${products}">
 								<c:if test="${product.categories eq 'BREAD'}">
 
-									<tr class="adminpage-productList-detail" onclick="location.href='/auth/product/${product.pronum}'">
+									<tr class="adminpage-productList-detail">
 										<td class="adminpage-productList-td">
 											<div>
 												<input type="checkbox" name="adminpage-productList-product1">
 											</div>
 										</td>
 										<td
-											class="adminpage-productList-main adminpage-productList-td">
+											class="adminpage-productList-main adminpage-productList-td" onclick="location.href='/auth/product/${product.pronum}'">
 											<img class="adminpage-productList-img"
 											src="/image?filename=${product.list_imgName}">
 											<div class="adminpage-productList-title">
@@ -77,13 +77,11 @@
 											<p class="adminpage-productList-pay">${product.proamount}개</p>
 											<br>
 										</td>
-										<td class="adminpage-productList-td"><input type="hidden"
-											value="${product.pronum}" class="pronum">
-
+										<td class="adminpage-productList-td">
 											<button
-												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
+												class="adminpage-productList-btn adminpage-productList-userdelete" onclick="deleteByPronum(${product.pronum})">삭제하기</button>
 											<button
-												class="adminpage-productList-btn adminpage-productList-userupdate">수정하기</button>
+												class="adminpage-productList-btn adminpage-productList-userupdate" type="button" onclick="location.href='/product/${product.pronum}/updateForm';">수정하기</button>
 										</td>
 									</tr>
 								</c:if>
@@ -122,14 +120,14 @@
 							<c:forEach var="product" items="${products}">
 								<c:if test="${product.categories eq 'DESSERT'}">
 
-									<tr class="adminpage-productList-detail" onclick="location.href='/auth/product/${product.pronum}'">
+									<tr class="adminpage-productList-detail" >
 										<td class="adminpage-productList-td">
 											<div>
 												<input type="checkbox" name="adminpage-productList-product1">
 											</div>
 										</td>
 										<td
-											class="adminpage-productList-main adminpage-productList-td">
+											class="adminpage-productList-main adminpage-productList-td" onclick="location.href='/auth/product/${product.pronum}'">
 											<img class="adminpage-productList-img"
 											src="/image?filename=${product.list_imgName}">
 											<div class="adminpage-productList-title">
@@ -150,11 +148,11 @@
 										</td>
 										<td class="adminpage-productList-td">
 										<input type="hidden"
-											value="${product.pronum}" class="pronum">
+											value="${product.pronum}" class="pronum" >
 											<button
-												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
+												class="adminpage-productList-btn adminpage-productList-userdelete" onclick="deleteByPronum(${product.pronum})">삭제하기</button>
 											<button
-												class="adminpage-productList-btn adminpage-productList-userupdate">수정하기</button>
+												class="adminpage-productList-btn adminpage-productList-userupdate" return false; onclick="location.href='/product/${product.pronum}/updateForm';">수정하기</button>
 										</td>
 									</tr>
 								</c:if>
@@ -180,7 +178,7 @@
 				<table class="adminpage-productList-table">
 					<form>
 						<thead class="adminpage-productList-thead">
-							<tr class="adminpage-productList-thead_tr" onclick="location.href='/auth/product/${product.pronum}'">
+							<tr class="adminpage-productList-thead_tr" >
 								<th style="width: 5%;" class="adminpage-memberList-th dummy"><input
 									type="checkbox" onclick='selectAllproduct3(this)'></th>
 								<th style="width: 40%;" class="adminpage-productList-th dummy">상품</th>
@@ -200,7 +198,7 @@
 											</div>
 										</td>
 										<td
-											class="adminpage-productList-main adminpage-productList-td">
+											class="adminpage-productList-main adminpage-productList-td" onclick="location.href='/auth/product/${product.pronum}'">
 											<img class="adminpage-productList-img"
 											src="/image?filename=${product.list_imgName}">
 											<div class="adminpage-productList-title">
@@ -220,12 +218,11 @@
 											<br>
 										</td>
 										<td class="adminpage-productList-td">
-										<input type="hidden"
-											value="${product.pronum}" class="pronum">
+										
 											<button
-												class="adminpage-productList-btn adminpage-productList-userdelete">삭제하기</button>
+												class="adminpage-productList-btn adminpage-productList-userdelete" onclick="deleteByPronum(${product.pronum})">삭제하기</button>
 											<button
-												class="adminpage-productList-btn adminpage-productList-userupdate">수정하기</button>
+												class="adminpage-productList-btn adminpage-productList-userupdate" return false; onclick="location.href='/product/${product.pronum}/updateForm'">수정하기</button>
 										</td>
 									</tr>
 								</c:if>
@@ -247,3 +244,5 @@
 
 	</div>
 </div>
+
+  <script type="text/javascript" src="/js/product.js"></script>

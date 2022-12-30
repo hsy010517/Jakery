@@ -25,6 +25,11 @@ public class ProductService {
 		return productRepository.findAll();
 	}
 	
+	@Transactional
+	public void 상품삭제(int pronum) {
+		productRepository.deleteById(pronum);
+	}
+	
 //	@Transactional(readOnly = true)
 //	public Products 카테고리별목록(Products categories) {
 //		return productRepository.findByCategories(categories).orElseThrow(() -> {
@@ -36,6 +41,13 @@ public class ProductService {
 
 	public Products 상품상세보기(int pronum) {
 		return productRepository.findByPronum(pronum).orElseThrow(() -> {
+			return new IllegalArgumentException("해당 상품을 찾을 수 없습니다.");
+		});
+	}
+	
+	@Transactional
+	public void 상품수정(int pronum,Products requestproduct) {
+		Products product = productRepository.findByPronum(pronum).orElseThrow(() -> {
 			return new IllegalArgumentException("해당 상품을 찾을 수 없습니다.");
 		});
 	}

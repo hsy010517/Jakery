@@ -64,18 +64,18 @@
           <form class="total_count" name="product_count" action="">
             <div class="count-wrap _count product_count_item">
               <button type="button" class="minus">-</button>
-              <input type="text" class="inp" value="1" disabled />
+              <input type="text" id="cartcount-inp" class="inp" value="1" disabled />
               <button type="button" class="plus">+</button>
-              <input type="hidden" value="가격*수량">
+              <input type="hidden" id="cart_pronum" value="${product.pronum}">
             </div>
           </form>
           <div class="total_price">
             <span class="product_price_item" style="color: #ffc730;">총 상품금액&nbsp </span>
-            <span class="product_price_item">${product.proprice}*수량 원</span>
+            <span class="product_price_item">${product.proprice}*<span id="inp2">1</span> = 최종가격원</span>
           </div>
         </div>
         <div class="product-main-item product-main-btn">
-          <input class="product-btn" type="button" value="장바구니">
+          <input class="product-btn" type="button" value="장바구니" id="cartbtn-save">
           <input class="product-btn" type="button" value="바로 구매하기">
         </div>
       </div>
@@ -119,5 +119,6 @@
 
 
     <script type="text/javascript" src="/js/productDetail.js"></script>
+    <script type="text/javascript" src="/js/cart.js"></script>
 
 <%@ include file="../layout/footer.jsp" %>
