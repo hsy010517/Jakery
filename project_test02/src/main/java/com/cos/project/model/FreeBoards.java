@@ -65,11 +65,14 @@ public class FreeBoards {
 	@JsonIgnoreProperties({"freeboards"})
 	private List<FreeReplys> freereply;
 	
-	@OneToMany(mappedBy="recommendfreeboards", fetch=FetchType.EAGER,cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties({"recommendfreeboards"})
-	private List<Recommends> recommend;
+	//추천 테이블 참조
+		@OneToMany(mappedBy="recommendfreeboard", fetch=FetchType.LAZY,cascade = CascadeType.REMOVE)
+		@JsonIgnoreProperties({"recommendfreeboard"})
+		//
+		private List<Recommends> recommends;
+
 	
-	@Formula("(SELECT count(1) FROM recommendliks rec WHERE rec.Freeboardsnum = freenum)")
+	@Formula("(SELECT count(1) FROM recommends rec WHERE rec.recommendfreenum = freenum)")
 	private int recommendcnt;
 
 	@CreationTimestamp

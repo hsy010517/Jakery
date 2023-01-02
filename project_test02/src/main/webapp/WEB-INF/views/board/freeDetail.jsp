@@ -22,11 +22,24 @@
             <div class="freeDetail-btn-div">
               <sec:authorize access="hasRole('ROLE_USER')">
                 <c:if test="${freeboard.users.num==principal.user.num}">
-
                   <a href="/board/${freeboard.freenum}/freeUpdateForm" class="freeboardbtn freeboardbtn-update"><i class="fa-solid fa-pencil"></i></a>
                   <button id="freeboardbtn-delete" class="freeboardbtn freeboardbtn-delete"><i class="fa-solid fa-trash"></i></button>
-					<button id="freeboardbtn-recommend" class="freeboardbtn freeboardbtn-recommend"><i class="fa-regular fa-heart"></i></button>
-<!-- 					<button id="freeboardbtn-recommend" class="freeboardbtn freeboardbtn-recommend"><i class="fa-solid fa-heart"></i></button> -->
+                </c:if>
+                <c:if test="${freeboard.users.num!=principal.user.num}">
+           		
+                <!-- recommend save -->
+                 <form action="/auth/freeboard/${freeboard.freenum}/recommend" method="POST">
+                	<input type="hidden" value="${freeboard.freenum}" id="recommendfreenum" size="0">
+                	<input type="hidden" value="${principal.user.userid}" id="recommenduserid" size="0">
+					
+					<%-- <a href="/auth/freeboard/${freeboard.freenum}/recommend">recommend page</a> --%>
+		        	<c:import url="http://localhost:8013/auth/freeboard/${freeboard.freenum}/recommend">
+							<c:param name="recommendcontent" value="${recommends.content}">
+							</c:param>
+					</c:import>
+                	
+                	
+                </form>
                 </c:if>
               </sec:authorize>
               <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
@@ -60,13 +73,14 @@
               </span> 
           </li>
           <li class="boardcontent-title-item boardcontent-count info_group">
-            <span class="info_detail">LIKE : </span><span id="recommendcnt" class="info_detail_content">
-               ${freeboard.recommend}
+            <span class="info_detail">LIKE : </span><span class="info_detail_content">
+               ${freeboard.recommendcnt}
               </span> 
           </li>
         </ul>
         <div class="boardDetail-content-item boardDetail-content-main">
         	${freeboard.freecontent}
+        	
         </div>
 
       </div>

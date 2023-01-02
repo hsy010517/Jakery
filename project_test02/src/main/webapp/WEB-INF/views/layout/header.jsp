@@ -115,6 +115,7 @@
 
             <c:otherwise>
                 <sec:authorize access="hasRole('ROLE_USER')">
+                
                <ul class="navbar-nav">
                   <li class="user-item nav-item"><a class="nav-link"
                      href="/logout">Logout</a></li>
@@ -126,7 +127,7 @@
                      </span></a></li>
                </ul>
                </sec:authorize>
-                               <sec:authorize access="hasRole('ROLE_ADMIN')">
+               <sec:authorize access="hasRole('ROLE_ADMIN')">
                <ul class="navbar-nav">
                   <li class="user-item nav-item"><a class="nav-link"
                      href="/logout">Logout</a></li>

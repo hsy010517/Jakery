@@ -72,7 +72,7 @@
 	              <span class="checkmark">
 	                <!--답장 완료 시 / 미 완료시 클래스 전자 후자 구분해서 choose 넣어주기-->
 	                <c:choose>
-		                <c:when test="${secretboard.secretreplycnt >= 1}">
+		                <c:when test="${secretboard.secretreplycnt==0}">
 		                	<div class="checkmark_stem_none"></div>
 		                  	<div class="checkmark_kick_none"></div>
 		                </c:when>

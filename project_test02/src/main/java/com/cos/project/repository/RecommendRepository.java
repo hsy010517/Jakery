@@ -11,7 +11,12 @@ import com.cos.project.model.Users;
 @Repository
 public interface RecommendRepository  extends JpaRepository<Recommends, Integer> {
 
-	Optional<Recommends> findByRecommendfreenum(int recommendfreenum);
+	Optional<Recommends> findByRecommendid(int recommendid);
 	Optional<Recommends> findByUsers(Users user);
+	//Optional<Recommends> findByRecommendfreeboard(Recommends recommendfreeboard);
+	/*
+	 * static Optional<Recommends> findByPostAndUser(Recommends recommend, Users
+	 * user) { // TODO Auto-generated method stub return null; }
+	 */
 
 }

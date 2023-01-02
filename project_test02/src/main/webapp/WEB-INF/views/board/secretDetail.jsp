@@ -50,8 +50,17 @@
               </span>
           </li>
           <li class="boardcontent-title-item boardcontent-count info_group">
-            <span class="info_detail">답변 : </span><span id="count" class="info_detail_content">완료
-              </span> 
+            <span class="info_detail">답변 : </span>
+            <span id="count" class="info_detail_content">
+            	<c:choose>
+	                <c:when test="${secretboard.secretreplycnt==0}">
+	                	미완료
+	                </c:when>
+	                <c:otherwise>
+	                	완료
+	                </c:otherwise>
+                </c:choose>
+            </span> 
           </li>
         </ul>
         <div class="boardDetail-content-item boardDetail-content-main">
@@ -106,20 +115,7 @@
 					<c:param name="secretcontent" value="${secretreplyboards.content}">
 					</c:param>
 				</c:import>
-		
-			<!-- 어드민이 댓글 보기 -->
-			<c:if test="${secretreplyboard.users.username != principal.user.username}">
-				<sec:authorize access="hasRole('ROLE_ADMIN')">
-					<!-- c:import -->
-					<c:import url="/secretboard/${secretboard.secretnum}/secretreply" >
-						<c:param name="secretcontent" value="${secretreplyboards.content}">
-						</c:param>
-					</c:import>
-				</sec:authorize>
-			</c:if>
-			
-			
-			
+
          </div>
         </div>
         

@@ -1,5 +1,6 @@
 package com.cos.project.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
@@ -8,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,24 +20,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@SequenceGenerator(
-		name="FREEBOARD_RECOMMENDLIKE_SEQ_GENERATOR"
-		, sequenceName = "RECOMMEND_SEQ"
-		, initialValue = 1
-		, allocationSize = 1
-		)
+
 public class Recommends {
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FREEBOARD_RECOMMENDLIKE_SEQ_GENERATOR") 
+	@GeneratedValue(strategy=GenerationType.AUTO) 
 	private int recommendid;
 		 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "userid", foreignKey = @ForeignKey(name = "fk_RecommendLike_Users")) 
+	@ManyToOne(fetch = FetchType.LAZY,optional = true)
+	@JoinColumn(name = "recommenduserid", foreignKey = @ForeignKey(name = "fk_RecommendLike_Users")) 
 	private Users users;
 	 
-	@ManyToOne(fetch = FetchType.EAGER)  
+	@ManyToOne(fetch = FetchType.LAZY)  
 	@JoinColumn(name = "recommendfreenum", foreignKey = @ForeignKey(name = "fk_RecommendLike_Freeboards")) 
-	private FreeBoards recommendfreeboards;
-  
+	private FreeBoards recommendfreeboard;
+	
+	@Column
+	private int existnum;
 
 }
