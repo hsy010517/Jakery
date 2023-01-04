@@ -32,13 +32,15 @@
 <link rel="stylesheet" type="text/css" href="/css/register.css">
 <link rel="stylesheet" type="text/css" href="/css/reservation.css">
 <link rel="stylesheet" type="text/css" href="/css/secret.css">
+<link rel="stylesheet" type="text/css" href="/css/registerUpdateForm.css"> 
+
+
 
 
 <!-- font awesome -->
   <script src="https://kit.fontawesome.com/a067aa947d.js" crossorigin="anonymous"></script>
 <!-- boot strap -->
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
@@ -51,13 +53,18 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js">
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
 
 <sec:authorize access="isAuthenticated()">
 	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
-<script type="text/javascript" src="/js/main.js"></script>
- <script type="text/javascript" src="/js/reservation.js"></script>
+<script type="text/javascript" src="/js/user.js"></script>
+<script type="text/javascript" src="/js/reservation.js"></script>
 </head>
 
 <body>

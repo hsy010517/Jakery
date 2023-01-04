@@ -1,7 +1,6 @@
 package com.cos.project.model;
 
 import java.sql.Timestamp;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -11,10 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -41,8 +38,7 @@ public class Users {
 	@Column(nullable=false, length=30, unique=true)
 	private String userid;
 	
-	
-	@Column(nullable=false, length=30, unique=true)
+	@Column(nullable=false, length=30)
 	private String username;
 	
 	@Column(nullable=false, length=100)
@@ -66,5 +62,12 @@ public class Users {
 	
 	@CreationTimestamp
 	private Timestamp createDate;
-	
+
+
+	public UsersBuilder toEntity() {
+		return Users.builder()
+		.userid(userid);
+	}
 }
+
+

@@ -9,40 +9,55 @@ import com.cos.project.model.RoleType;
 import com.cos.project.model.Users;
 import com.cos.project.repository.UserRepository;
 
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
+
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder encodeer;
-	
-	//회원가입시 작동
+
+	// 회원가입시 작동
 	@Transactional
 	public void 회원가입(Users user) {
 
-		String rawPassword=user.getPassword(); //원본
-		String encPassword=encodeer.encode(rawPassword); //암호화
+		String rawPassword = user.getPassword(); // 원본
+		String encPassword = encodeer.encode(rawPassword); // 암호화
 		user.setPassword(encPassword);
 		user.setRoles(RoleType.USER);
 		userRepository.save(user); // 하나의 트랙잭션
 	}
-	
-	//회원수정시 작동
+
 	@Transactional
 	public void 회원수정(Users user) {
-		//수정시에는 영속성 컨텍스트 Users오브젝트를 영속화 시키고,
-		//여속화된 Users오브젝트를 수정
-		//select를 해서 Users오브젝트를DB로 부터 가져오는 이유는 영속화를 하기 위해서 
-		Users persistance=userRepository.findByUsername(user.getUsername()).orElseThrow(()->{
+		Users persistance = userRepository.findByUserid(user.getUserid()).orElseThrow(() -> {
 			return new IllegalArgumentException("회원 찾기 실패");
 		});
-		String rawPassword=user.getPassword();
-		String encPassword=encodeer.encode(rawPassword);
+		String rawPassword = user.getPassword();
+		String encPassword = encodeer.encode(rawPassword);
 		persistance.setPassword(encPassword);
 		persistance.setEmail(user.getEmail());
-		
+		persistance.setAddress(user.getAddress());
+		persistance.setPostnum(user.getPostnum());
+		persistance.setSubaddress(user.getSubaddress());
+
+	}
+
+	@Transactional(readOnly = true)
+	public int idCheck(String userid) {
+		int cnt = userRepository.countByUserid(userid);
+		return cnt;
+	}
+ 
+	@Transactional
+	public void 회원삭제(Users user) {
+		Users persistance = userRepository.findByUserid(user.getUserid()).orElseThrow(() -> {
+			return new IllegalArgumentException("회원 찾기 실패");
+		});
+		userRepository.delete(persistance);
 	}
 
 }
