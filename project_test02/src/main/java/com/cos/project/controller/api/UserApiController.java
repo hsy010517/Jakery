@@ -2,8 +2,11 @@ package com.cos.project.controller.api;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +22,12 @@ public class UserApiController {
 
 	@Autowired 
 	private UserService userService;
+	
+	
+	
+
+	
+	
 
 	@PostMapping("/auth/joinProc")
 	public ResponseDto<Integer> save(@RequestBody Users user) {
@@ -37,12 +46,18 @@ public class UserApiController {
 		System.out.println(count);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),count);
 	}
+	
+	
 
 	@PutMapping("/user")
 	public ResponseDto<Integer> update(@RequestBody Users user) {
 		userService.회원수정(user);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
+
+
+	
 	
 	@PostMapping("/delete")
 	public ResponseDto<Integer> delete(@RequestBody Users user) {

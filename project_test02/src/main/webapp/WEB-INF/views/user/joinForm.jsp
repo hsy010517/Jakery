@@ -17,8 +17,7 @@
 					<label for="password">비밀번호 확인 <span style="color: #ffc730;">*</span></label>
 					<label for="email">메일 <span style="color: #ffc730;">*</span></label>
 					<label for="tel2" class="title">우편번호</label> <label for="addr"
-						class="title">주소</label> <label for="addr" class="title">상세
-						주소</label>
+						class="title">주소</label> <label for="addr" class="title">상세						주소</label>
 				</div>
 				<div class="registerform-input">
 					<input type="text" class="registerform-control" name="userid"
@@ -43,9 +42,6 @@
 					<input type="button" class="registerbtn-idCheck"
 						id="registerbtn-idCheck" value="중복 확인"> <input
 						type="hidden" name="enc" id="idck2" value="0">
-
-
-
 				</div>
 			</div>
 		</form>

@@ -1,9 +1,12 @@
 package com.cos.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.cos.project.model.RoleType;
 import com.cos.project.model.Users;
@@ -24,11 +27,11 @@ public class UserService {
 	@Transactional
 	public void 회원가입(Users user) {
 
-		String rawPassword = user.getPassword(); // 원본
-		String encPassword = encodeer.encode(rawPassword); // 암호화
+		String rawPassword = user.getPassword(); 
+		String encPassword = encodeer.encode(rawPassword); 
 		user.setPassword(encPassword);
 		user.setRoles(RoleType.USER);
-		userRepository.save(user); // 하나의 트랙잭션
+		userRepository.save(user); 
 	}
 
 	@Transactional
@@ -51,6 +54,7 @@ public class UserService {
 		int cnt = userRepository.countByUserid(userid);
 		return cnt;
 	}
+	
  
 	@Transactional
 	public void 회원삭제(Users user) {
@@ -59,5 +63,9 @@ public class UserService {
 		});
 		userRepository.delete(persistance);
 	}
+
+    public List<Users> findMembers(){
+        return userRepository.findAll();
+    }
 
 }
