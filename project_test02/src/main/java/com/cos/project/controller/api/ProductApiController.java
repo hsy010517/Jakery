@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -118,13 +119,13 @@ public class ProductApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 
-	@PostMapping("/api/product/{pronum}")
+	@PutMapping("/api/product/{pronum}")
 	public ResponseDto<Integer> update(@PathVariable int pronum,
 			@RequestPart(value = "key") ProductsSaveRequestDto requestDto,
 			@RequestPart(value = "file", required = false) MultipartFile file,
 			@RequestPart(value = "file2", required = false) MultipartFile file2,
 			@RequestPart(value = "file3", required = false) MultipartFile file3) {
-		
+
 		String mainFileName = file.getOriginalFilename();
 		String changeMainFileNameExtension = FilenameUtils.getExtension(mainFileName).toLowerCase();
 		String mainFileUrl = "C:\\image\\";
@@ -203,8 +204,7 @@ public class ProductApiController {
 		System.out.println(file3);
 		System.out.println(product);
 
-		
-		productService.상품수정(pronum,product);
+		productService.상품수정(pronum, product);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 }

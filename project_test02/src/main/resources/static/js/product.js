@@ -110,7 +110,7 @@ let index = {
 
 		$.ajax({
 			type: "PUT",
-			url: "/api/board/" + pronum,
+			url: "/api/product/" + pronum,
 			method: "put",
 
 			data: formData,

@@ -76,7 +76,7 @@
         </div>
         <div class="product-main-item product-main-btn">
           <input class="product-btn" type="button" value="장바구니" id="cartbtn-save">
-          <input class="product-btn" type="button" value="바로 구매하기">
+          <input class="product-btn" type="button" value="바로 구매하기"  onclick="location.href='/product/orderForm/${product.pronum}'">
         </div>
       </div>
 
