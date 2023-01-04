@@ -1,3 +1,4 @@
+
 	
 	/*//예약이 가득찬 날들의 배열
 	var thisMonthFullDateList = new Array();
@@ -375,3 +376,4 @@
 		form.target = "payment";
 		form.submit();
 	}*/
+

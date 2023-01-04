@@ -170,6 +170,5 @@
 					});
 </script>
 <script type="text/javascript" src="/js/proimgchk.js"></script>
-
 <script type="text/javascript" src="/js/product.js"></script>
 <%@ include file="../layout/footer.jsp"%>

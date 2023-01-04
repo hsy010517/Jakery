@@ -59,7 +59,7 @@ let index={
 		$.ajax({ 
 			type:"DELETE",
 			url:"/api/secretboard/"+secretnum,
-			dataType:"json" 
+			dactaType:"json" 
 		}).done(function(resp){
 			alert("삭제가 완료되었습니다.");
 			location.href="/";
