@@ -16,13 +16,13 @@
 		<c:forEach var="secretreplyboard" items="${secretreplyboards.content}">
 		<!-- 작성자가 본인 댓글 보기 -->
 		<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_ADMIN')">
-		<c:if test="${secretreplyboard.users.username == principal.user.username || secretreplyboard.users.roles=='ADMIN'}">
-		<c:if test="${secretreplyboard.secretboards.secretnum==secretboard.secretnum }">
+		<c:if test="${secretreplyboard.users.userid == principal.user.userid || secretreplyboard.users.roles=='ADMIN'}">
+		<c:if test="${(secretreplyboard.secretboards.secretnum==secretboard.secretnum)}">
             <div class="freereply-contents-main"> 
                   <div class="freereply-contents-main-item" >
                   	<form>
 	                    <div class="freereply-form-title">
-	                      작성자: ${secretreplyboard.users.username} ${secretreplyboard.users.userid}
+	                      작성자: ${secretreplyboard.users.username} (${secretreplyboard.users.userid})
 	                      작성날짜: ${secretreplyboard.users.createDate}
 	                    <input type="hidden" value="게시판 번호 ${secretreplyboard.secretboards.secretnum}" size="10" disabled>
 	                    <input type="hidden" value="${secretreplyboard.secretreplynum}" size="8" disabled id="secretdeletenum">
@@ -42,21 +42,23 @@
             
             
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <c:if test="${secretreplyboard.users.username != principal.user.username}">
-             	 <div class="freereply-contents-main"> 
-                  <div class="freereply-contents-main-item" >
-                  <form>
-                    <div class="freereply-form-title">
-                      작성자: ${secretreplyboard.users.username} ${secretreplyboard.users.userid}
-                      작성날짜: ${secretreplyboard.users.createDate}
-                    <input type="hidden" value="게시판 번호 ${secretreplyboard.secretboards.secretnum}" size="10" disabled>
-                    <input type="hidden" value="${secretreplyboard.secretreplynum}" size="8" disabled id="secretdeletenum">
-                    </div>
-                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${secretreplyboard.secretreplycontent}</textarea>
-                 </form>
-					<button type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${secretreplyboard.secretreplynum})">삭제 x</button>
-                  </div>                 
-            	</div>
+            <c:if test="${(secretreplyboard.users.userid != principal.user.userid)&&secretreplyboard.users.roles=='USER'}">
+	            <c:if test="${(secretreplyboard.secretboards.secretnum==secretboard.secretnum)}">
+	             	 <div class="freereply-contents-main"> 
+	                  <div class="freereply-contents-main-item" >
+	                  <form>
+	                    <div class="freereply-form-title">
+	                      작성자: ${secretreplyboard.users.username} (${secretreplyboard.users.userid})
+	                      작성날짜: ${secretreplyboard.users.createDate}
+	                    <input type="hidden" value="게시판 번호 ${secretreplyboard.secretboards.secretnum}" size="10" disabled>
+	                    <input type="hidden" value="${secretreplyboard.secretreplynum}" size="8" disabled id="secretdeletenum">
+	                    </div>
+	                    <textarea class="reply-form-note reply-desc" rows="3" cols="150" disabled>${secretreplyboard.secretreplycontent}</textarea>
+	                 </form>
+						<button type="button" class="freeboardreplybtn-delete" onclick="reply.replyDelete(${secretreplyboard.secretreplynum})">삭제 x</button>
+	                  </div>                 
+	            	</div>
+	           	</c:if>
             </c:if>
              </sec:authorize>  
           </c:forEach>

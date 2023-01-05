@@ -65,8 +65,15 @@ public class FreeBoards {
 	@JsonIgnoreProperties({"freeboards"})
 	private List<FreeReplys> freereply;
 	
-	@Column
-	private int recommend;
+	//추천 테이블 참조
+		@OneToMany(mappedBy="recommendfreeboard", fetch=FetchType.LAZY,cascade = CascadeType.REMOVE)
+		@JsonIgnoreProperties({"recommendfreeboard"})
+		//
+		private List<Recommends> recommends;
+
+	
+	@Formula("(SELECT count(1) FROM recommends rec WHERE rec.recommendfreenum = freenum)")
+	private int recommendcnt;
 
 	@CreationTimestamp
 	private Timestamp freecreateDate;

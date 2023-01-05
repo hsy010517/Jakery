@@ -91,7 +91,7 @@
 							<tr>
 								<td style="height: 50px; padding-left: 12px; border: none;"
 									colspan="3"><input type="checkbox"
-									name="adminpage-productList-product1">
+									name="adminpage-productList-product1" id="AdminDeletecheckbox1">
 									<button class="adminpage-memberList-userdeleteall">선택
 										상품 모두 삭제</button></td>
 							</tr>
@@ -162,7 +162,7 @@
 							<tr>
 								<td style="height: 50px; padding-left: 12px; border: none;"
 									colspan="3"><input type="checkbox"
-									name="adminpage-productList-product2">
+									name="adminpage-productList-product2"  id="AdminDeletecheckbox2">
 									<button class="adminpage-memberList-userdeleteall">선택
 										상품 모두 삭제</button></td>
 							</tr>
@@ -232,7 +232,7 @@
 							<tr>
 								<td style="height: 50px; padding-left: 12px; border: none;"
 									colspan="3"><input type="checkbox"
-									name="adminpage-productList-product3">
+									name="adminpage-productList-product3"   id="AdminDeletecheckbox3">
 									<button class="adminpage-memberList-userdeleteall">선택
 										상품 모두 삭제</button></td>
 							</tr>

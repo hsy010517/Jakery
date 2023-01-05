@@ -41,7 +41,7 @@
 				</li>
 				<li class="boardcontent-title-item boardcontent-username info_group">
 					<span class="info_detail">작성일 : </span><span
-					class="info_detail_content"> ${notice.createDate} </span>
+					class="info_detail_content"> <fmt:formatDate value="${notice.createDate}" pattern="yyyy-MM-dd"/> </span>
 				</li>
 
 			</ul>

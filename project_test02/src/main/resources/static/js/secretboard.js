@@ -55,7 +55,7 @@ let index={
 	},
 	
 	secretDeleteById: function(){
-		let secretnum=$("#secretnum").text();
+		let secretnum=$("#secretnum").val();
 		$.ajax({ 
 			type:"DELETE",
 			url:"/api/secretboard/"+secretnum,

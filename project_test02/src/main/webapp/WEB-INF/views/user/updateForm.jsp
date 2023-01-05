@@ -36,13 +36,13 @@
                   id="password" autofocus> <input type="password"
                   class="mypage-registerform-control" id="password_chk"> <input
                   type="email" class="mypage-registerform-control" id="email"
-                  placeholder="${principal.user.email}"> <input type="text"
+                  value="${principal.user.email}"> <input type="text"
                   class="mypage-registerform-control" name="zipcode" id="postnum"
-                  placeholder="${principal.user.postnum}" readonly="readonly"> <input
+                  value="${principal.user.postnum}" readonly="readonly"> <input
                   type="text" class="mypage-registerform-control" name="address"
-                  placeholder="${principal.user.address}" id="address"> <input
+                  value="${principal.user.address}" id="address"> <input
                   type="text" class="mypage-registerform-control"
-                  name="address_detail" placeholder="${principal.user.subaddress}"
+                  name="address_detail" value="${principal.user.subaddress}"
                   id="subaddress">
             </div>
          </div>

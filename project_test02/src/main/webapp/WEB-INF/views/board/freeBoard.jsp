@@ -29,6 +29,7 @@
         게시글 관련 신고는 1:1 문의를 통해 접수해주시기 바랍니다.
       </div>
       <div class="board-list-title">LIST</div>
+      
         <c:forEach var="freeboard" items="${freeboards.content}">
           <div class="board-div">
             <ul class="board-list" onclick="location.href='/auth/freeboard/${freeboard.freenum}'" style="cursor:pointer;">

@@ -17,8 +17,6 @@ let reply={
 			secretreplycontent: $("#secretreplycontent").val(),
 			username: $("#secretreplyuser").val(),
 		};
-		console.log(data);
-		console.log(secretnum);
 		$.ajax({ 
 			type:"POST",
 			url:"/api/secretboard/"+secretnum+"/secretreply",
@@ -38,7 +36,7 @@ let reply={
 	
 	replyDelete: function(secretdeletenum){
 		/*let deletenum=$("#deletenum").text();*/
-		alert(secretdeletenum);
+
 
 		$.ajax({ 
 			type:"DELETE",

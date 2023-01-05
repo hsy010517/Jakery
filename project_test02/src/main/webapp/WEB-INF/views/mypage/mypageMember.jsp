@@ -20,11 +20,11 @@
         </div>
         <div class="mypage-registerform-input">
           <input type="text" class="mypage-registerform-control" value="${principal.user.userid}" id="userid" disabled> <input
-            type="text" class="mypage-registerform-control"  value="${principal.user.username}" id="username" disabled> <input
-            type="password" class="mypage-registerform-control" value="" id="password" disabled> 
+            type="text" class="mypage-registerform-control"  value="${principal.user.username}"  id="username" disabled> <input
+            type="password" class="mypage-registerform-control" value="${principal.user.password}" id="password" disabled> 
             <input  type="email" class="mypage-registerform-control" value="${principal.user.email}" id="email" disabled>
-            <input type="text" class="mypage-registerform-control" name="zipcode" value="${principal.user.postnum}" readonly id="postnum" disabled>
-            <input type="text" class="mypage-registerform-control" name="address" value="${principal.user.address}" readonly id="address" disabled>
+            <input type="text" class="mypage-registerform-control" name="zipcode" readonly value="${principal.user.postnum}" id="postnum" disabled>
+            <input type="text" class="mypage-registerform-control" name="address" readonly value="${principal.user.address}" placeholder="Enter Your Address" id="address" disabled>
             <input type="text"  class="mypage-registerform-control"  name="address_detail" value="${principal.user.subaddress}" id="subaddress" disabled>
             <input type="number"  class="mypage-registerform-control"  name="number" id="number" value ="1234" disabled>
 
@@ -32,9 +32,12 @@
       </div>
     </form>
     <div class="mypage-register-btn-div">
+     <button type="submit" class="mypage-btn-register" id="btn-delete">회원탈퇴</button>
     <a href="/auth/updateForm"><button type="submit" class="mypage-btn-register" id="btn-update">수정하기</button></a>
     <a href="/logout" class="mypage-btn-logout" id="">로그아웃</a>
   </div>
   </div>
 </div>
             <br />
+            
+            <script src="/js/user.js"></script>

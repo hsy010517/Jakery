@@ -33,7 +33,7 @@
 	
         <c:forEach var="secretboard" items="${secretboards.content}">
                 <div class="board-div">     
-                <c:if test="${secretboard.users.username == principal.user.username}">
+                <c:if test="${secretboard.users.userid == principal.user.userid}">
           <ul class="board-list" onclick="location.href='/secretboard/${secretboard.secretnum}'" style="cursor:pointer;">  
             <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
             </li>
@@ -60,7 +60,7 @@
           </c:if>
            <!-- 어드민이 쓸 수 있게 -->
           <sec:authorize access="hasRole('ROLE_ADMIN')">
-          <c:if test="${secretboard.users.username != principal.user.username}">
+          <c:if test="${secretboard.users.userid != principal.user.userid}">
            	<ul class="board-list" onclick="location.href='/secretboard/${secretboard.secretnum}'" style="cursor:pointer;">  
 	            <li class="board-item"><a href="/secretboard/${secretboard.secretnum}" class="secretboard-num dummy">${secretboard.secretnum}</a>
 	            </li>
@@ -72,7 +72,7 @@
 	              <span class="checkmark">
 	                <!--답장 완료 시 / 미 완료시 클래스 전자 후자 구분해서 choose 넣어주기-->
 	                <c:choose>
-		                <c:when test="${secretboard.secretreplycnt >= 1}">
+		                <c:when test="${secretboard.secretreplycnt==0}">
 		                	<div class="checkmark_stem_none"></div>
 		                  	<div class="checkmark_kick_none"></div>
 		                </c:when>

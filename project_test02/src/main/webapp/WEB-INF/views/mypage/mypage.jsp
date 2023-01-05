@@ -20,11 +20,11 @@
 					<table class="mypage-sub-profile-item mypage-sub-profile-table">
 						<tr>
 							<th>가입일</th>
-							<td>｜ ${principal.user.createDate}</td>
+							<td>｜ <fmt:formatDate value="${principal.user.createDate}" pattern="yyyy-MM-dd"/></td>
 						</tr>
 						<tr>
 							<th>등급</th>
-							<td>｜ USER</td>
+							<td>｜ ${principal.user.roles}</td>
 						</tr>
 						<tr>
 							<th>구매</th>

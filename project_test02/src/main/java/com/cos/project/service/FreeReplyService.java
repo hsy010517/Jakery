@@ -6,12 +6,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.cos.project.model.FreeBoards;
 import com.cos.project.model.FreeReplys;
 import com.cos.project.model.Users;
-import com.cos.project.repository.FreeboardRepository;
 import com.cos.project.repository.FreeReplyRepository;
+import com.cos.project.repository.FreeboardRepository;
 
 @Service
 public class FreeReplyService {
