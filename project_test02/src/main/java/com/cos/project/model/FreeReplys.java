@@ -9,13 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.cos.project.model.FreeBoards;
-import com.cos.project.model.Users;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
