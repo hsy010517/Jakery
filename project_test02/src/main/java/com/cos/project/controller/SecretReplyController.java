@@ -17,7 +17,8 @@ public class SecretReplyController {
 	SecretReplyService secretreplyService;
 	//댓글 목록
 		@GetMapping({"/secretboard/{secretreplynum}/secretreply"})
-		public String index(@PathVariable int secretreplynum,Model model,@PageableDefault(size=50,sort="secretreplynum",direction=Sort.Direction.DESC) Pageable pageable) {
+		public String index(@PathVariable int secretreplynum,Model model,
+			@PageableDefault(size=50,sort="secretreplynum",direction=Sort.Direction.DESC) Pageable pageable) {
 			System.out.println("a");
 			
 			model.addAttribute("secretreplyboards", secretreplyService.일대일게시판댓글목록(pageable));	

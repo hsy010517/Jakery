@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.project.config.auth.PrincipalDetail;
 import com.cos.project.dto.ResponseDto;
-import com.cos.project.model.FreeBoards;
 import com.cos.project.model.SecretBoards;
-import com.cos.project.service.FreeBoardService;
 import com.cos.project.service.SecretBoardService;
 
 @RestController

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" >
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
    uri="http://www.springframework.org/security/tags"%>
@@ -43,6 +43,9 @@
 <link rel="stylesheet" type="text/css" href="/css/adminpage-memberList.css">
 <link rel="stylesheet" type="text/css" href="/css/adminpage-memberForm.css">
 <link rel="stylesheet" type="text/css" href="/css/adminpage-productList.css">
+<link rel="stylesheet" type="text/css" href="/css/productForm.css">
+<link rel="stylesheet" type="text/css" href="/css/popup.css">
+
 <!-- font awesome -->
   <script src="https://kit.fontawesome.com/a067aa947d.js" crossorigin="anonymous"></script>
 <!-- boot strap -->
@@ -69,6 +72,9 @@
 </sec:authorize>
 <!-- <script type="text/javascript" src="/js/main.js"></script> -->
  <script type="text/javascript" src="/js/reservation.js"></script>
+ <script type="text/javascript" src="/js/popup.js"></script>
+
+
 </head>
 
 <body>
@@ -80,14 +86,14 @@
                   style="color: #ffc730;">J</span><span style="color: #303030;">akery</span></a></li>
             <li class="menu-item nav-item"><a class="nav-link" href="">News</a>
                <ol class="sub_menu_list">
-                  <li class="sub-item"><a href="/notice">Notice</a></li>
+                  <li class="sub-item"><a href="/auth/notice">Notice</a></li>
                   <li class="sub-item"><a href="/auth/event">Event</a></li>
                </ol></li>
-            <li class="menu-item nav-item"><a class="nav-link" href="">Menu</a>
+            <li class="menu-item nav-item"><a class="nav-link" href="/auth/product">Menu</a>
                <ol class="sub_menu_list">
-                  <li class="sub-item"><a href="">Bread</a></li>
-                  <li class="sub-item"><a href="">Desert</a></li>
-                  <li class="sub-item"><a href="">Baking tools</a></li>
+                  <li class="sub-item category-bread"><a href="/auth/product" >Bread</a></li>
+                  <li class="sub-item category-dessert"><a href="/auth/product">Desert</a></li>
+                  <li class="sub-item category-baking"><a href="/auth/product">Baking tools</a></li>
                </ol></li>
             <li class="menu-item nav-item"><a class="nav-link" href="">Board</a>
                <ol class="sub_menu_list">
@@ -119,7 +125,7 @@
                <ul class="navbar-nav">
                   <li class="user-item nav-item"><a class="nav-link"
                      href="/logout">Logout</a></li>
-                  <li class="user-item nav-item"><a class="nav-link" href="/mypage">MyPage</a></li>
+                  <li class="user-item nav-item"><a class="nav-link" href="/mypage/${principal.user.num}">MyPage</a></li>
                   <li class="user-item nav-item"><a class="nav-link" href=""><span
                         class="reading-glasses"> <span
                            class="reading-glasses__circle"></span> <span

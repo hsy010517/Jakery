@@ -19,7 +19,8 @@ public class SecretBoardController {
 	
 	//1:1게시판 목록
 	@GetMapping({"/secretboard/secretBoard"})
-	public String secretBoard(Model model,@PageableDefault(size=3,sort="secretnum",direction=Sort.Direction.DESC) Pageable pageable) {
+	public String secretBoard(Model model,@PageableDefault(size=3,sort="secretnum",direction=Sort.Direction.DESC) 
+	Pageable pageable) {
 		System.out.println("a");
 		
 		model.addAttribute("secretboards", secretBoardService.일대일게시판글목록(pageable));	

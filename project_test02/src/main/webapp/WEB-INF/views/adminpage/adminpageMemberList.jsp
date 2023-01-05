@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
            <div id="adminpage-memberList-container">
               <div class="adminpage-memberList-wrapper">
           
@@ -29,13 +31,16 @@
                     </thead>
                     <tbody class="adminpage-memberList-tbody">
                                   <!--반복코드 tr기준으로 반복하시면됩니다.-->
-          
+         
+          			<c:forEach var="userinfo" items="${users}">
+          			
+          			
                       <tr class="adminpage-memberList-detail">
                         <td>
                           <div><input type="checkbox" name="adminpage-memberList-user"></div>
                         </td>
                         <td class="adminpage-memberList-td">
-                          <p class="adminpage-memberList-username">회원 이름 <br> (아이디)</p>
+                          <p class="adminpage-memberList-username"> ${userinfo.username} <br> (${userinfo.userid})</p>
                         </td>
                         <td class="adminpage-memberList-td">
                           <div class="adminpage-memberList-userdetail">
@@ -52,7 +57,8 @@
                           <button class="adminpage-memberList-btn adminpage-memberList-userupdate">수정하기</button>
                         </td>
                       </tr>
-          
+                  
+          			</c:forEach>
                     </tbody>
                     <tfoot>
                       <tr>

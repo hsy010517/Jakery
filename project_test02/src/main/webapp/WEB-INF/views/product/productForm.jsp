@@ -17,7 +17,7 @@
 				<span style="color: #ffc730;">P</span>RODUCT <span
 					style="color: #ffc730;">F</span>ORM
 			</h1>
-			<form class="productForm-main">
+			<form class="productForm-main"  enctype="multipart/form-data" id="productForm">
 				<fieldset class="productForm-field">
 					<legend class="legend">작성하기</legend>
 
@@ -26,7 +26,7 @@
 							<li class="product-name"><label
 								class="product-username-label" for="productForm-admin">작성자
 									: </label> <input type="text" id="productForm-adminname"
-								value="admin name" disabled
+								value="${principal.username}" disabled
 								class="productForm-username productForm-input-item" required>
 							</li>
 							<li class="product-date"><label for="productForm-userdate">작성
@@ -43,24 +43,23 @@
 								<li><label for="productForm-productprice"> 가격 : </label></li>
 								<li><label for="productForm-productamount"> 재고 : </label></li>
 								<li><label for="productForm-productdate">유통기한 : </label></li>
+								<li><label for="productForm-productsave">보관방법 : </label></li>
 							</div>
 							<div class="productForm-product-input">
-								<li><select id="productForm-productclass"
-									name="productForm-productclass">
-										<option value="bread">빵류</option>
-										<option value="dessert">디저트류</option>
-										<option value="tool">기구류</option>
+								<li><select id="categories" name="categories">
+										<option value="BREAD">빵류</option>
+										<option value="DESSERT">디저트류</option>
+										<option value="BAKING">기구류</option>
 								</select></li>
-								<li><input type="text" id="productForm-productname"
+								<li><input type="text" id="proname" name="proname"
 									class="productForm-productname productForm-input-item" required></li>
-								<li><input type="number" id="productForm-productprice"
-									required value="1500" min="0"
+								<li><input type="number" id="proprice" name="proprice" required
+									value="1500" min="0"
 									class="productForm-productamount productForm-input-item"></li>
-								<li><input type="number" id="productForm-productamount"
-									required value="100" min="0" max="9999"
+								<li><input type="number" id="proamount" name="proamount" required
+									value="100" min="0" max="9999"
 									class="productForm-productamount productForm-input-item"></li>
-								<li><select id="productForm-productdate"
-									name="productForm-productdate">
+								<li><select id="prodate" name="prodate">
 										<option value="당일 섭취 권장">당일 섭취 권장</option>
 										<option value="1~2일 이내 섭취 권장">1~2일 이내 섭취 권장</option>
 										<option value="3~4일 이내 섭취 권장" selected>3~4일 이내 섭취 권장</option>
@@ -71,21 +70,26 @@
 										<option value="6개월 이내 섭취 권장">6개월 이내 섭취 권장</option>
 										<option value="1년 이내 섭취 권장">1년 이내 섭취 권장</option>
 								</select></li>
+								<li><select id="prosave" name="prosave">
+										<option value="실온 보관">실온 보관</option>
+										<option value="냉장 보관">냉장 보관</option>
+										<option value="냉동 보관">냉동 보관</option>
+								</select></li>
 							</div>
 						</ul>
 						<ul class="productForm-ul3">
 							<div class="productForm-descdiv">
-								<li><label for="productForm-keyword">1줄 설명 :</label><br>
+								<li><label for="prodesc1">1줄 설명 :</label><br>
 									<textarea required class="productForm-caption"
-										name="productForm-caption" id="" cols="50" rows="1"
+										name="prodesc1" id="prodesc1" cols="50" rows="1"
 										placeholder="상품에 대한 1줄 설명을 적어주세요.(20자 내외)"></textarea></li>
-								<li><label for="productForm-keyword">상품 상세 설명 :</label><br>
+								<li><label for="prodesc2">상품 상세 설명 :</label><br>
 									<textarea class="productForm-caption"
-										name="productForm-caption" id="" cols="50" rows="5"
+										name="prodesc2" id="prodesc2" cols="50" rows="5"
 										placeholder="상품 설명을 한 문단 이내로 적어주세요."></textarea></li>
-								<li><label for="productForm-keyword">상세 정보 :</label><br>
-									<textarea class="productForm-caption"
-										name="productForm-caption" id="" cols="50" rows="20"
+								<li><label for="procontent">상세 정보 :</label><br>
+									<textarea class="productForm-caption summernote"
+										name="procontent" id="procontent" cols="50" rows="20"
 										placeholder="상품에 관한 주의사항 등을 상세히 적어주세요."></textarea></li>
 							</div>
 						</ul>
@@ -96,17 +100,17 @@
 								<li><label for="productimgfile-info">info 이미지: </label></li>
 							</div>
 							<div class="productForm-imgdiv-input">
-								<li><input type="file" id="productimgfile-main" name="file"
+								<li><input type="file" id="productimgfile-main" name="productimgfile-main"
 									required />
 									<div class="select_img">
 										<img src="" />
 									</div></li>
-								<li><input type="file" id="productimgfile-list" name="file"
+								<li><input type="file" id="productimgfile-list" name="productimgfile-list"
 									required />
 									<div class="select_img">
 										<img src="" />
 									</div></li>
-								<li><input type="file" id="productimgfile-info" name="file"
+								<li><input type="file" id="productimgfile-info" name="productimgfile-info"
 									required />
 									<div class="select_img">
 										<img src="" />
@@ -115,21 +119,57 @@
 						</ul>
 					</div>
 				</fieldset>
-
-
-
-				<div class="order-btn-div">
-					<button type="reset" value="" class="productForm-reset-btn dummy">다시
-						작성</button>
-					<button type="submit" value="" class="productForm-submit-btn dummy">올리기</button>
-				</div>
 			</form>
+			<div class="order-btn-div">
+				<button type="reset" value="" class="productForm-reset-btn dummy">다시
+					작성</button>
+				<button id="productbtn-save" class="productForm-submit-btn dummy">올리기</button>
+			</div>
 		</div>
 	</div>
 </div>
 
 <script>
-    document.getElementById('productForm-userdate').valueAsDate = new Date();
-  </script>
+	document.getElementById('productForm-userdate').valueAsDate = new Date();
+</script>
+<script>
+	$('#procontent')
+			.summernote(
+					{
+						height : 400,
+						toolbar : [
+								// 글꼴 설정
+								[ 'fontname', [ 'fontname' ] ],
+								// 글자 크기 설정
+								[ 'fontsize', [ 'fontsize' ] ],
+								// 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
+								[
+										'style',
+										[ 'bold', 'italic', 'underline',
+												'strikethrough', 'clear' ] ],
+								// 글자색
+								[ 'color', [ 'forecolor', 'color' ] ],
+								// 표만들기
+								[ 'table', [ 'table' ] ],
+								// 글머리 기호, 번호매기기, 문단정렬
+								[ 'para', [ 'ul', 'ol', 'paragraph' ] ],
+								// 줄간격
+								[ 'height', [ 'height' ] ],
+								// 그림첨부, 링크만들기, 동영상첨부
+								[ 'insert', [ 'picture', 'link', 'video' ] ],
 
+						],
+						// 추가한 글꼴
+						fontNames : [ 'Arial', 'Arial Black', 'Comic Sans MS',
+								'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림',
+								'돋음체', '바탕체' ],
+						// 추가한 폰트사이즈
+						fontSizes : [ '8', '9', '10', '11', '12', '14', '16',
+								'18', '20', '22', '24', '28', '30', '36', '50',
+								'72' ]
+					});
+</script>
+<script type="text/javascript" src="/js/proimgchk.js"></script>
+
+<script type="text/javascript" src="/js/product.js"></script>
 <%@ include file="../layout/footer.jsp"%>

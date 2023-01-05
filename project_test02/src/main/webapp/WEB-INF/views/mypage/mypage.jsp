@@ -15,16 +15,16 @@
 				<div class="mypage-sub-profile">
 					<div class="mypage-sub-profile-item mypage-sub-profile-title">
 						<span class="mypage-sub-profile-name"><span
-							style="color: #ffc730;">이름</span>님</span><br> 환영합니다.
+							style="color: #ffc730;">${principal.user.username}</span>님</span><br> 환영합니다.
 					</div>
 					<table class="mypage-sub-profile-item mypage-sub-profile-table">
 						<tr>
 							<th>가입일</th>
-							<td>｜ 2022.12.12</td>
+							<td>｜ ${principal.user.createDate}</td>
 						</tr>
 						<tr>
 							<th>등급</th>
-							<td>｜ USER</td>
+							<td>｜ ${principal.user.roles}</td>
 						</tr>
 						<tr>
 							<th>구매</th>

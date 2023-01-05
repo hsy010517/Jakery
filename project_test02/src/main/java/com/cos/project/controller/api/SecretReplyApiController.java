@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cos.project.config.auth.PrincipalDetail;
 import com.cos.project.dto.ResponseDto;
-import com.cos.project.model.FreeReplys;
 import com.cos.project.model.SecretReplys;
 import com.cos.project.service.SecretReplyService;
 

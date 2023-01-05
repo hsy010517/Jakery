@@ -1,23 +1,28 @@
 package com.cos.project.controller;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.cos.project.config.auth.PrincipalDetail;
+import com.cos.project.model.FreeBoards;
 import com.cos.project.service.FreeBoardService;
+import com.cos.project.service.RecommendService;
 
 @Controller
 public class FreeBoardController {
 	
 		@Autowired
 		FreeBoardService freeboardService;
+		
+		@Autowired
+		RecommendService recommendService;
 	
 		@GetMapping({"","/"})
 		public String main() {
@@ -33,9 +38,10 @@ public class FreeBoardController {
 		//게시글 목록
 		@GetMapping({"/auth/freeBoard"})
 		public String index(Model model,@PageableDefault(size=3,sort="freenum",direction=Sort.Direction.DESC) Pageable pageable) {
-			System.out.println("a");
+			System.out.println("a");		
 			
 			model.addAttribute("freeboards", freeboardService.자유게시판글목록(pageable));	
+			
 			return "board/freeBoard"; 
 		}
 		//게시글 작성
@@ -44,15 +50,14 @@ public class FreeBoardController {
 		public String freeSaveForm() {
 			return "board/freeSaveForm";
 		}
-		
 		//글 상세보기
 		@GetMapping("/auth/freeboard/{freenum}")
-		public String findByFreenum(@PathVariable int freenum, Model model) {
+		public String findByFreenum(@PathVariable int freenum, Model model, @AuthenticationPrincipal PrincipalDetail principal ) {
 			System.out.println("글상세 호출"+freenum);
 			model.addAttribute("freeboard",freeboardService.자유게시판글상세보기(freenum));
+			model.addAttribute("recommendexist",recommendService.추천존재확인(principal.getUser().getUserid(),freenum));
 			return "board/freeDetail";
 		}
-		
 		
 		//글수정하기
 		@GetMapping("/board/{freenum}/freeUpdateForm")
@@ -60,6 +65,4 @@ public class FreeBoardController {
 			model.addAttribute("freeboard",freeboardService.자유게시판수정글상세보기(freenum));
 			return "board/freeUpdateForm";
 		}
-		
-	
 }

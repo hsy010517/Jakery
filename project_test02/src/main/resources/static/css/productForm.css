@@ -186,3 +186,12 @@ font-size: 15px;
 .productForm-imgdiv-label>li{
   margin: 18px 0;
 }
+
+.file-input{
+	line-height:2.5;
+	margin-bottom:5px;
+}
+
+.productImgUpdate{
+	margin:8px;
+}

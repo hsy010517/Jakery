@@ -19,13 +19,13 @@
 
         </div>
         <div class="adminpage-registerform-input">
-          <input type="text" class="adminpage-registerform-control" value="입력된 아이디" id="userid" disabled> <input
-            type="text" class="adminpage-registerform-control"  value="입력된 이름"  id="username" disabled> <input
-            type="password" class="adminpage-registerform-control" value="입력된 패스워드" id="password" disabled> 
-            <input  type="email" class="adminpage-registerform-control" value="입력된 이메일" id="email" disabled>
-            <input type="text" class="adminpage-registerform-control" name="zipcode" readonly id="postnum" disabled>
-            <input type="text" class="adminpage-registerform-control" name="address" readonly placeholder="Enter Your Address" id="address" disabled>
-            <input type="text"  class="adminpage-registerform-control"  name="address_detail" id="subaddress" disabled>
+          <input type="text" class="adminpage-registerform-control" value="${principal.user.userid}" id="userid" disabled> <input
+            type="text" class="adminpage-registerform-control"  value="${principal.user.username}"  id="username" disabled> <input
+            type="password" class="adminpage-registerform-control" value="${principal.user.password}" id="password" disabled> 
+            <input  type="email" class="adminpage-registerform-control" value="${principal.user.email}" id="email" disabled>
+            <input type="text" class="adminpage-registerform-control" name="zipcode" readonly value="${principal.user.postnum}" id="postnum" disabled>
+            <input type="text" class="adminpage-registerform-control" name="address" readonly value="${principal.user.address}" placeholder="Enter Your Address" id="address" disabled>
+            <input type="text"  class="adminpage-registerform-control"  name="address_detail" value="${principal.user.subaddress}" id="subaddress" disabled>
             <input type="number"  class="adminpage-registerform-control"  name="number" id="number" value ="1234" disabled>
 
         </div>

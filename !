@@ -1,0 +1,245 @@
+[33mcommit edc17bbc30e3762c55b5c1a649c8da27d1d7553e[m[33m ([m[1;36mHEAD -> [m[1;32mhsy_productupload[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m, [m[1;32mhsy_product_upload[m[33m)[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Tue Dec 27 11:31:16 2022 +0900
+
+    hsy_notice pull
+
+[33mcommit 95d1afed85ecf3a32e9bb5f465fe495288b61247[m[33m ([m[1;31morigin/hsy_notice[m[33m, [m[1;32mhsy_notice[m[33m)[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Tue Dec 27 11:20:16 2022 +0900
+
+    notice 완료
+
+[33mcommit 9cd351cc9008a5633ddc9c6dc42549f5ab066515[m[33m ([m[1;32mhsy_adminpagejsp[m[33m)[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 26 12:22:42 2022 +0900
+
+    header jsp adminpage 추가
+
+[33mcommit ab726fd1a74b92227f12a509e8444c066620d259[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 26 12:08:40 2022 +0900
+
+    adminpage jsp 작업 완료
+
+[33mcommit 507be77064d5e361904ed5196a1a5eb0a2dfd8a3[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Thu Dec 22 16:00:21 2022 +0900
+
+    master_reviewForm 추가
+
+[33mcommit e4845273787f0c6c4959b1d07689f53a47b6917f[m[33m ([m[1;31morigin/hhr_secretboard[m[33m)[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Thu Dec 22 15:33:45 2022 +0900
+
+    free secret 자유게시판과 일대일게시판을 만들었다. 추천기능은 아직이다
+
+[33mcommit a5d2ce84f4c894059db108594d53623973ca85b3[m
+Merge: ab0e373 fe0f7ab
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Wed Dec 21 14:39:35 2022 +0900
+
+    Merge branch 'master' of https://github.com/hsy010517/Jakery into
+    hhr_secretboard
+    충돌 수정했어요 >< 2022-12-21 오후2시경
+    # Conflicts:
+    #       project_test02/src/main/webapp/WEB-INF/views/board/freeDetail.jsp
+    #       project_test02/src/main/webapp/WEB-INF/views/board/freeReplyBoard.jsp
+    #       project_test02/src/main/webapp/WEB-INF/views/board/secretSaveForm.jsp
+    #       project_test02/src/main/webapp/WEB-INF/views/layout/footer.jsp
+
+[33mcommit ab0e3738e8a3dee94e328c46c45c7885898d9347[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Wed Dec 21 10:34:43 2022 +0900
+
+    hhr_secretboard
+
+[33mcommit fe0f7ab73ebf824df49f18bbbb15153ff8e7e5dd[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Tue Dec 20 17:53:41 2022 +0900
+
+    html > jsp 변환 작업 완료 _ 리뷰폼 제외
+
+[33mcommit 418026ef0f82b8aaef1cb1c2a79ead3d2e48cb81[m[33m ([m[1;32mhsy_boardcssclear[m[33m)[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Tue Dec 20 15:19:03 2022 +0900
+
+    자유게시판 작동 로그인 작동, 일대일게시판 작성중
+
+[33mcommit f1a899cec85462b81ec16d6e1842739b15d84cf5[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Fri Dec 16 17:22:30 2022 +0900
+
+    reply delete complete-finally 자유게시판 댓글 삭제까지 완성
+
+[33mcommit b0aa7186353731bae3cc35a7a71f5b64bea2fc62[m
+Merge: badd4d9 af5e3bf
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Mon Dec 12 18:00:30 2022 +0900
+
+    Merge branch 'master' of https://github.com/hsy010517/Jakery into
+    hhr_test2
+    
+    # Conflicts:
+    #       project_test02/src/main/resources/application.yml
+     find id 아직 findidservice 하던중이었음
+
+[33mcommit badd4d9cafdcc896ce50cae066b1286e91eac28e[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Mon Dec 12 16:46:01 2022 +0900
+
+    application.yml modified
+
+[33mcommit 532fc0b7c46b5bbbe3c46cce629831ca3aaaaacb[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Mon Dec 12 16:37:37 2022 +0900
+
+    login check outlooking is complete. but password modify outlooking is
+    not.
+
+[33mcommit af5e3bf6ab766c7f592056d9d6b412e4c96b3d18[m
+Merge: c252a85 2617d0f
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 12 16:17:37 2022 +0900
+
+    Merge branch 'hsy_test' of https://github.com/hsy010517/Jakery
+
+[33mcommit c252a854a2024964ba395ddc7c193c7ce02a69da[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 12 15:53:31 2022 +0900
+
+    master_test
+
+[33mcommit 2617d0fa6e5f4d295f991e725035bd8c5f3d46d3[m[33m ([m[1;31morigin/hsy_test[m[33m)[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 12 15:49:05 2022 +0900
+
+    hsy_commit_20221212_freeboard01
+
+[33mcommit 6c7216c583bcfe58ac9b1fb36ebf8b288de9d924[m[33m ([m[1;31morigin/hhr_test2[m[33m)[m
+Author: TofuAndSoySauce <hhr245@hanmail.net>
+Date:   Mon Dec 12 10:55:25 2022 +0900
+
+    test
+
+[33mcommit c8c7424257d0e84ac47aefdcfcbb6c4a4d6f9479[m[33m ([m[1;32mhhr_test2[m[33m)[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Mon Dec 12 10:02:00 2022 +0900
+
+    hsy_test
+
+[33mcommit 0beebd7a2609c6c8638c49a3f61fbf482057ff4e[m[33m ([m[1;31morigin/hhr_test[m[33m)[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Fri Dec 9 17:59:48 2022 +0900
+
+    Add files via upload
+
+[33mcommit 91eb82ed0821daa97cf7ca7e8f4fb43c5c51e0f3[m
+Author: csj11111 <119910053+csj11111@users.noreply.github.com>
+Date:   Fri Dec 9 17:41:15 2022 +0900
+
+    Add files via upload
+
+[33mcommit e3315813e6e92465863b32f56a497fe780538162[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Fri Dec 9 16:40:07 2022 +0900
+
+    freeboard repository exitst
+
+[33mcommit 5ced1233757be3c6cd63d1e6516e2d7bbf1b433d[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Fri Dec 9 16:38:51 2022 +0900
+
+    Add files via upload
+
+[33mcommit 350722a0e1c2382db772fc58d6e1ad44098c77a1[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Fri Dec 9 15:51:02 2022 +0900
+
+    Delete project (4).zip
+
+[33mcommit 0e2beba2bdefa1419fe80ca611878b3a02ff5e70[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Fri Dec 9 15:50:41 2022 +0900
+
+    Add files via upload
+
+[33mcommit a999019b3c0883b81d02d47318adb84128350d36[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Fri Dec 9 15:37:04 2022 +0900
+
+    freeboard
+
+[33mcommit ee288ed0a4d6fbc17f4bb17b8b085e63aa784bab[m
+Author: csj11111 <119910053+csj11111@users.noreply.github.com>
+Date:   Fri Dec 9 12:14:26 2022 +0900
+
+    Add files via upload
+
+[33mcommit 38c019a57a4d4f53b82524a56ceb5008639cb29b[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 17:58:19 2022 +0900
+
+    Add files via upload
+
+[33mcommit 2f65aaf5e275b26133e123f073ff78e435aac298[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 17:56:43 2022 +0900
+
+    Delete project (2).zip
+
+[33mcommit c022f41fa78c0eb04d7bd1f39150796f145db889[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 17:56:36 2022 +0900
+
+    Delete project.zip
+
+[33mcommit 62976fcc565b22e713f9b7e518c6842a28482338[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Thu Dec 8 16:42:26 2022 +0900
+
+    Add files via upload
+
+[33mcommit f3223184ab56fa9a718fac4b8295e77a5c6aa5a0[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 16:42:04 2022 +0900
+
+    Delete project-1.zip
+
+[33mcommit 05baf64bf83c79d194e35c2985e9dbe204bc163d[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 16:41:54 2022 +0900
+
+    Delete project.zip
+
+[33mcommit 7d765a40f2237114103845b1c19cef7c460eab1f[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Thu Dec 8 16:34:34 2022 +0900
+
+    project file login and join
+
+[33mcommit cd857e65754f7e887ab92bc8fcf32c8fc4fdb4a2[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Thu Dec 8 16:13:31 2022 +0900
+
+    work login join
+
+[33mcommit 19f14098d71c6213d65b22e0983f05458ff06180[m
+Author: TofuAndSoySauce <112847500+TofuAndSoySauce@users.noreply.github.com>
+Date:   Thu Dec 8 15:13:53 2022 +0900
+
+    change structure
+    
+    join is not work
+
+[33mcommit b6d19264311b9c5bae8f5be3e4839f665d557fcc[m
+Author: hsy010517 <119910050+hsy010517@users.noreply.github.com>
+Date:   Thu Dec 8 13:03:05 2022 +0900
+
+    Add files via upload
+
+[33mcommit 92caacf19a9525009b77f6397756b38613f314f2[m
+Author: hsy <hsy010517@gmail.com>
+Date:   Thu Dec 8 12:59:36 2022 +0900
+
+    project

@@ -1,6 +1,6 @@
 
 
-document.getElementById('checkboxId').onchange = function() {
+/*document.getElementById('checkboxId').onchange = function() {
    if($("#checkboxId").is(":checked")){
    $("#freeboardbtn-recommendSave").show();
    $("#freeboardbtn-recommendDelete").hide();
@@ -17,7 +17,7 @@ document.getElementById('checkboxId').onchange = function() {
 	$("freeboardbtn-recommendDelete").show();
     $("#freeboardbtn-recommendSave").hide();
 }
-   
+   */
    /*if(checkboxcheck.checked==true){
 	 checkboxcheck.checked= !checkboxcheck.checked;
 	 recommendSave.style.display
@@ -26,7 +26,7 @@ document.getElementById('checkboxId').onchange = function() {
 	}
   */
    
-}
+//}
 /*checkboxcheck.checked;*/
 let recommend={
 
@@ -37,15 +37,16 @@ let recommend={
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.recommendSave();
 		});
+		/*
 		$("#freeboardbtn-recommendDelete").on("click",()=>{
 			//화살표 함수사용 이유: this를 바인딩하기 위해 사용
 			this.recommendDelete();
 			
-		});
+		});*/
 	},
 recommendSave: function(){
 		let recommendfreeboardnum= $("#recommendfreenum").val();
-		//alert('user의 save함수 호출됨');
+		//alert('recommendSave 함수 호출됨');
 		let data={
 			recommenduserid: $("#recommenduserid").val(),
 
@@ -57,30 +58,39 @@ recommendSave: function(){
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
 		}).done(function(resp){
-			alert("추천 완료되었습니다.");
-			location.href="/auth/freeboard/"+recommendfreeboardnum;
-		}).fail(function(error){
+			//resp.data
+			let recommendtest =$("#recommendtest");
+			let recommendtest2 =$("#recommendtest2");
+			recommendtest.hide();
+			recommendtest2.show();
+			location.href = "/auth/freeboard/"+recommendfreeboardnum;
+			}).fail(function(error){
 			alert("잘못된 접근입니다")
 			alert(JSON.stringify(error));
 		});
 	},
-recommendDelete: function(){
-		let recommendfreeboard= $("#recommendfreenum").val();
-		let recommendid= $("#recommendid").val();
+
+	
+}	
+function recommendDelete(recommendfreeboardnum){
+		/*let recommendfreeboard= $("#recommendfreenum").val();
+		let recommendid= $("#recommendid").val();*/
+		console.log(recommendfreeboardnum);
 		$.ajax({ 
 			type:"DELETE",
-			url:"/api/freeboard/"+recommendid+"/recommend",
+			url:"/api/freeboard/"+recommendfreeboardnum+"/recommend",
 			contentType:"application/json; charset=utf-8",
 			dataType:"json" 
 		}).done(function(resp){
-			alert("삭제가 완료되었습니다.");
-			location.href="/auth/freeboard/"+recommendfreeboard;
+			let recommendtest =$("#recommendtest");
+			let recommendtest2 =$("#recommendtest2");
+			recommendtest.show();
+			recommendtest2.hide();
+			location.href = "/auth/freeboard/"+recommendfreeboardnum;
 		}).fail(function(error){
 			alert("잘못된 접근입니다")
 			alert(JSON.stringify(error));
 		});
-	},
+	}
 	
-	
-}	
 recommend.init();

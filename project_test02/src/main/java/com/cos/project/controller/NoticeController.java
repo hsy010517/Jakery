@@ -17,7 +17,7 @@ public class NoticeController {
 	@Autowired
 	private NoticeService noticeService;
 	
-	@GetMapping({"/notice"})
+	@GetMapping({"/auth/notice"})
 	public String notice(Model model,@PageableDefault(size=10,sort="noticenum",direction=Sort.Direction.DESC)Pageable pageable) {
 
 		model.addAttribute("notices", noticeService.글목록(pageable));

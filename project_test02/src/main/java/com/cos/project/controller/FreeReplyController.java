@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.cos.project.model.Users;
 import com.cos.project.service.FreeReplyService;
 
 @Controller
@@ -19,7 +18,8 @@ public class FreeReplyController {
 		FreeReplyService freereplyService;
 		//댓글 목록
 			@GetMapping({"/auth/freeboard/{freereplynum}/freereply"})
-			public String index(@PathVariable int freereplynum,Model model,@PageableDefault(size=50,sort="freereplynum",direction=Sort.Direction.DESC) Pageable pageable) {
+			public String index(@PathVariable int freereplynum,Model model,
+					@PageableDefault(size=50,sort="freereplynum",direction=Sort.Direction.DESC) Pageable pageable) {
 				System.out.println("a");
 				
 				model.addAttribute("freereplyboards", freereplyService.자유게시판댓글목록(pageable));	

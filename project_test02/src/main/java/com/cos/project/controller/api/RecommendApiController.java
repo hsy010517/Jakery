@@ -27,14 +27,16 @@ public class RecommendApiController {
 		System.out.println(recommendfreeboardnum+" "+recommend);
 		
 		recommendService.추천저장(recommendfreeboardnum, recommend, principal.getUser());
+		recommendService.추천user(recommendfreeboardnum,principal.getUser());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
 	//추천 삭제
-	@DeleteMapping("/api/freeboard/{recommendid}/recommend")
-	public ResponseDto<Integer> recommendDelete(@PathVariable int recommendid){
-		System.out.println("댓글 삭제1"+recommendid);
-		recommendService.추천삭제(recommendid);
-		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+	@DeleteMapping("/api/freeboard/{recommendfreeboardnum}/recommend")
+	public ResponseDto<Integer> recommendDelete(@AuthenticationPrincipal PrincipalDetail principal, @PathVariable int recommendfreeboardnum){
+		System.out.println("댓글 삭제1"+principal.getUser().getUserid());
+		System.out.println("댓글 삭제1"+recommendfreeboardnum);
+		recommendService.추천삭제recommend(principal.getUser().getUserid(),recommendfreeboardnum);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),0);
 	}
 }
 

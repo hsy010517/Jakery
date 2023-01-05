@@ -12,17 +12,17 @@
           <div class="adminpage-sub-logo"><span style="color: #ffc730;">J</span>AKERY</div>
           <div class="adminpage-sub-profile">
             <div class="adminpage-sub-profile-item adminpage-sub-profile-title">
-              <span class="adminpage-sub-profile-name"><span style="color: #ffc730;">이름</span>님</span><br>
+              <span class="adminpage-sub-profile-name"><span style="color: #ffc730;">${principal.user.username}</span>님</span><br>
               환영합니다.
             </div>
             <table class="adminpage-sub-profile-item adminpage-sub-profile-table">
               <tr>
                 <th>가입일</th>
-                <td>｜ 2022.12.12</td>
+                <td>｜ ${principal.user.createDate}</td>
               </tr>
               <tr>
                 <th>등급</th>
-                <td>｜ ADMIN</td>
+                <td>｜ ${principal.user.roles}</td>
               </tr>
               <tr>
                 <th>구매</th>
@@ -61,5 +61,6 @@
 
     </div>
   </div>
+    <script type="text/javascript" src="/js/product.js"></script>
           <script type="text/javascript" src="/js/adminpage.js"></script>
           <%@ include file="../layout/footer.jsp" %>
